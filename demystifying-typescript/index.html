@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Demystifying TypeScript</title>
+
+		<meta name="description" content="Presentation for TypeScript">
+		<meta name="author" content="Kamran Ayub">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/moon.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Demystifying TypeScript</h1>
+					<h3>5 Common Myths Debunked</h3>
+					<p>
+						<small>Created by <a href="http://kamranicus.com">Kamran Ayub</a> / <a href="http://twitter.com/kamranayub">@kamranayub</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>About Me</h2>
+					<img src="img/yes_man.jpg">
+					<p>
+						I work at General Mills as an application developer, I maintain some open source projects,
+						and I like to play video games
+					</p>		
+					<p><a href="http://github.com/kamranayub">github.com/kamranayub</a></p>			
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Myth #1</h2>
+						<blockquote>
+							&ldquo;TypeScript is not interoperable with JavaScript&rdquo;
+						</blockquote>
+						<p class="fragment">AKA</p>
+						<blockquote class="fragment">
+							&ldquo;I have to rewrite my JavaScript codebase&rdquo;
+						</blockquote>
+					</section>
+					<section>
+						<h2>What language is this?</h2>
+						<pre><code class="javascript" data-trim>
+var Point = function (x, y) { 
+	this.x = x; 
+	this.y = y; 
+};
+Point.prototype.distance = function (other) {
+	other = other || new Point(0.0, 0.0);
+	return Math.sqrt(
+		Math.pow(this.x - other.x, 2) + 
+		Math.pow(this.y - other.y, 2));
+};
+
+var p1 = new Point(5, 6);
+var p2 = new Point(1, 1);
+
+// Calculate distance between two points
+console.log("Distance between", p1, p2, "is", p1.distance(p2));
+						</code></pre>
+						<p class="fragment">It's TypeScript!</p>
+					</section>
+					<section>
+						<h2>JavaScript <em>is</em> TypeScript</h2>
+						<p>All valid JavaScript is valid TypeScript</p>
+					</section>
+					<section>
+						<h2>Facts</h2>
+						<ul>
+							<li class="fragment">TypeScript <em>compiles</em> into plain old JavaScript</li>
+							<li class="fragment">Static typing is optional</li>
+							<li class="fragment">There is no overhead because TypeScript is not a runtime</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Myth #1</h2>
+						<blockquote>
+							&ldquo;TypeScript is not interoperable with JavaScript&rdquo;
+						</blockquote>
+						<p>&nbsp;</p>
+						<p class="fragment">No, it's a <em>superset</em> of JavaScript</p>										
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Myth #2</h2>
+						<blockquote>
+							&ldquo;You have to learn a whole new language&rdquo;
+						</blockquote>
+						<p class="fragment">AKA</p>
+						<blockquote class="fragment">
+							&ldquo;I have to train everyone to use TypeScript&rdquo;
+						</blockquote>
+					</section>
+
+					<section>
+						<h2>Yes and No</h2>
+
+						<p class="fragment">Are there new language features to learn? <strong>Yes</strong></p>
+						<p class="fragment">Is it a whole new language? <strong>No</strong></p>
+					</section>
+
+					<section>
+						<h2>Perspective</h2>
+
+						<ul>
+							<li class="fragment">TypeScript uses syntax from ECMAScript 6</li>
+							<li class="fragment">You will need to learn the new syntax <em>anyway</em></li>
+							<li class="fragment">There are only a few new things to learn</li>
+							<li class="fragment">TypeScript can target different versions of ECMAScript</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Types</h2>
+
+						<pre><code data-trim class="javascript">
+function distance(x1, y1, x2, y2) {
+	return Math.sqrt(
+		Math.pow(x1 - x2, 2) + 
+		Math.pow(y1 - y2, 2));
+}
+
+alert(distance(0, 0, 5, 5));   // OK
+alert(distance("a", 0, 5, 5)); // NaN
+</code></pre>
+					</section>	
+
+					<section>
+						<h2>Classes</h2>
+
+						<pre><code data-trim class="javascript">
+var Point = function (x, y) { 
+	this.x = x; 
+	this.y = y; 
+};
+Point.prototype.distance = function (other) {
+	other = other || new Point(0.0, 0.0);
+	return Math.sqrt(
+		Math.pow(this.x - other.x, 2) + 
+		Math.pow(this.y - other.y, 2));
+};
+</code></pre>						
+
+					<aside class="notes">
+					class Vector extends Point {
+	
+						/* Normalizes a vector to have a magnitude of 1 */
+						normalize(): Vector {
+					    	var d = this.distance();
+					    	if (d > 0) {
+					        	return new Vector(this.x / d, this.y / d);
+					     	} else {
+					        	return new Vector(0, 1);
+					     	}
+						}
+						
+					}
+					</aside>
+
+					</section>
+
+					<section>
+						<h2>And there's more!</h2>
+
+						<p>Classes and types are only two examples</p>
+						<p>There's plenty more!</p>
+					</section>
+
+					<section>
+						<h2>Myth #2</h2>
+						<blockquote>
+							&ldquo;You have to learn a whole new language&rdquo;
+						</blockquote>
+						<p>&nbsp;</p>
+						<p class="fragment">New syntax? Sure, but most of it is from ECMAScript 6</p>
+					</section>
+				</section>
+
+
+
+
+
+				<section>
+					<section>
+						<h2>Myth #3</h2>
+						<blockquote>
+							&ldquo;You can only use TypeScript in Visual Studio&rdquo;
+						</blockquote>
+						<p class="fragment">AKA</p>
+						<blockquote class="fragment">
+							&ldquo;I'm on Linux!&rdquo;
+						</blockquote>
+					</section>
+
+					<section>
+						<h2>Facts</h2>
+
+						<ul>
+							<li class="fragment">The TypeScript compiler and language service is open-source</li>
+							<li class="fragment">You can use TypeScript on any platform and any OS</li>
+							<li class="fragment">You can integrate TypeScript into any editor of your choice</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>First-Class Experience</h2>
+
+						<p>Visual Studio provides the best tooling support, no question</p>
+						<p>&nbsp;</p>
+						<p>Express edition is free on Windows</p>
+					</section>
+
+					<section>
+						<h2>What about the rest of us?</h2>
+
+						<ul>
+							<li class="fragment">Sublime has a TypeScript plugin</li>
+							<li class="fragment">You can create a compile step in Grunt or Gulp</li>
+							<li class="fragment">You can <code>`npm install -g typescript`</code> on any platform</li>
+							<li class="fragment">WebStorm is a great alternative IDE for every platform</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Let's do it now</h2>
+
+						<p>We're going to setup TypeScript in Sublime</p>
+					</section>
+
+					<section>
+						<h2>Myth #3</h2>
+						<blockquote>
+							&ldquo;You can only use TypeScript in Visual Studio&rdquo;
+						</blockquote>
+						<p>&nbsp;</p>
+						<p class="fragment">TypeScript is open-source and can integrate with just about any editor you use</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Myth #4</h2>
+						<blockquote>
+							&ldquo;Unit testing will eliminate any need of TypeScript&rdquo;
+						</blockquote>
+						<p class="fragment">AKA</p>
+						<blockquote class="fragment">
+							&ldquo;I don't need no stinkin' type checking&rdquo;
+						</blockquote>
+					</section>
+
+					<section>	
+						<ul>
+							<li><strong>Me:</strong> Well, everything looks okay, let's run this</li>
+							<li><strong>Console:</strong> <code>TypeMismatch error: 'xyz' does not exist on type undefined</code></li>
+							<li><strong>Me:</strong> ****!!!!</li>
+							<li><em>3 hours later</em></li>
+							<li><strong>Me:</strong> JavaScript ****ing sucks</li>
+						</ul>
+
+						<h2>Sound Familiar?</h2>
+					</section>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
