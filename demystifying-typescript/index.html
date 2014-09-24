@@ -60,7 +60,17 @@
 					<p><a href="http://github.com/kamranayub">github.com/kamranayub</a></p>			
 				</section>
 
-				<!-- Example of nested vertical slides -->
+				<section>
+					<h3 class="fragment">Fact</h3>
+					<h1 class="fragment">Writing large JavaScript applications is hard</h1>
+				</section>
+
+				<section>
+					<h1>The Mystical TypeScript</h1>
+					<h3 class="fragment">Demystified</h3>
+				</section>
+
+
 				<section>
 					<section>
 						<h2>Myth #1</h2>
@@ -92,11 +102,11 @@ var p2 = new Point(1, 1);
 // Calculate distance between two points
 console.log("Distance between", p1, p2, "is", p1.distance(p2));
 						</code></pre>
-						<p class="fragment">It's TypeScript!</p>
+						<p class="fragment">It's JavaScript!</p>
+						<p class="fragment">And it's TypeScript!</p>
 					</section>
 					<section>
-						<h2>JavaScript <em>is</em> TypeScript</h2>
-						<p>All valid JavaScript is valid TypeScript</p>
+						<h1>All valid JavaScript is valid TypeScript</h1>
 					</section>
 					<section>
 						<h2>Facts</h2>
@@ -110,8 +120,12 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 					<section>
 						<h2>Declaration Files</h2>
 
-						<p>Declaration files make it easy to work with existing JavaScript libraries</p>
+						<p>Declaration files make it easy to work with existing libraries</p>
 						<p><a href="https://github.com/borisyankov/DefinitelyTyped">github.com/borisyankov/DefinitelyTyped</a></p>
+					</section>
+
+					<section>
+						<h1>Quick Example</h1>
 					</section>
 
 					<section>
@@ -120,7 +134,7 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 							&ldquo;TypeScript is not interoperable with JavaScript&rdquo;
 						</blockquote>
 						<p>&nbsp;</p>
-						<p class="fragment">TypeScript is a <em>superset</em> of JavaScript and you can use declaration files to work with existing codebases</p>										
+						<p class="fragment">TypeScript is a <em>typed superset</em> of JavaScript that compiles down to plain JavaScript</p>
 					</section>
 				</section>
 
@@ -128,11 +142,11 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 					<section>
 						<h2>Myth #2</h2>
 						<blockquote>
-							&ldquo;You have to learn a whole new language&rdquo;
+							&ldquo;It's a whole new language&rdquo;
 						</blockquote>
 						<p class="fragment">AKA</p>
 						<blockquote class="fragment">
-							&ldquo;I have to train everyone to use TypeScript&rdquo;
+							&ldquo;I have to re-learn JavaScript&rdquo;
 						</blockquote>
 					</section>
 
@@ -155,7 +169,7 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 					</section>
 
 					<section>
-						<h2>Types</h2>
+						<h2>Static Typing</h2>
 
 						<pre><code data-trim class="javascript">
 function distance(x1, y1, x2, y2) {
@@ -170,7 +184,7 @@ alert(distance("a", 0, 5, 5)); // NaN
 					</section>	
 
 					<section>
-						<h2>Classes</h2>
+						<h2>Classes &amp; Modules</h2>
 
 						<pre><code data-trim class="javascript">
 var Point = function (x, y) { 
@@ -190,23 +204,20 @@ Point.prototype.distance = function (other) {
 					<section>
 						<h2>And there's more!</h2>
 
-						<p>Classes and types are only two examples</p>
+						<p>Classes, modules and static typing are only a few examples</p>
 						<p>There's plenty more!</p>
+						<p><a href="http://www.typescriptlang.org/Playground">typescriptlang.org/Playground</a></p>
 					</section>
 
 					<section>
 						<h2>Myth #2</h2>
 						<blockquote>
-							&ldquo;You have to learn a whole new language&rdquo;
+							&ldquo;It's a whole new language&rdquo;
 						</blockquote>
 						<p>&nbsp;</p>
 						<p class="fragment">New syntax? Sure, but most of it is from ECMAScript 6</p>
 					</section>
 				</section>
-
-
-
-
 
 				<section>
 					<section>
@@ -245,14 +256,15 @@ Point.prototype.distance = function (other) {
 							<li class="fragment">Sublime has a TypeScript plugin</li>
 							<li class="fragment">You can create a compile step in Grunt or Gulp</li>
 							<li class="fragment">You can <code>`npm install -g typescript`</code> on any platform</li>
-							<li class="fragment">WebStorm is a great alternative IDE for every platform</li>
+							<li class="fragment">WebStorm is a great alternative IDE for every platform: <a href="http://jetbrains.com/webstorm/">jetbrains.com/webstorm/</a></li>
 						</ul>
 					</section>
 
 					<section>
 						<h2>Let's do it now</h2>
 
-						<p>We're going to setup TypeScript in Sublime</p>
+						<p>We're going to setup TypeScript in Sublime Text</p>
+						<p class="fragment">... and if we have time, Visual Studio "Monaco"</p>
 					</section>
 
 					<section>
@@ -278,6 +290,7 @@ Point.prototype.distance = function (other) {
 					</section>
 
 					<section>	
+						<h2>Consider the following</h2>
 						<blockquote>
 							&ldquo;Well, everything looks okay, let's run this&rdquo;
 						</blockquote>
@@ -303,7 +316,7 @@ Point.prototype.distance = function (other) {
 					</section>
 
 					<section>
-						<h1>Being afraid of your codebase is not good</h1>
+						<h1>Having a Read-Only Codebase Is Not Good</h1>
 					</section>
 
 					<section>
@@ -319,9 +332,20 @@ Point.prototype.distance = function (other) {
 					</section>
 
 					<section>
-						<h2>A practical example</h2>
+						<h1>A practical example</h1>
 
-						<p>TODO</p>
+						<p class="fragment"><a href="http://bit.ly/buildts2">bit.ly/buildts2</a></p>
+					</section>
+
+					<section>
+						<h2>Myth #4</h2>
+						<blockquote>
+							&ldquo;Unit testing will eliminate any need of TypeScript&rdquo;
+						</blockquote>
+						<p>&nbsp;</p>
+						<p class="fragment">
+							TypeScript can catch easily overlooked errors and reduces risk of runtime errors
+						</p>
 					</section>
 				</section>
 
@@ -344,12 +368,6 @@ Point.prototype.distance = function (other) {
 					<section>
 						<h2>CoffeeScript</h2>
 
-						<ul>
-							<li class="fragment">Inspired by Ruby</li>
-							<li class="fragment">Is not statically typed</li>
-							<li class="fragment">Is more of a "macro" language</li>
-						</ul>
-
 						<pre class="fragment"><code data-trim class="coffeescript">
 class Point
   constructor(@x, @y) ->
@@ -359,16 +377,16 @@ class Point
     dy = @y - other.y
     Math.sqrt dx * dx + dy * dy
 						</code></pre>
+
+						<ul>
+							<li class="fragment">Inspired by Ruby</li>
+							<li class="fragment">Is not statically typed</li>
+							<li class="fragment">Is more of a "macro" language</li>
+						</ul>
 					</section>
 
 					<section>
 						<h2>Dart</h2>
-
-						<ul>
-							<li class="fragment">Supports static types</li>
-							<li class="fragment">Compiles into JavaScript</li>
-							<li class="fragment">More of an SDK and framework</li>
-						</ul>
 
 						<pre class="fragment"><code data-trim class="dart">
 import 'dart:math';
@@ -386,16 +404,16 @@ class Point {
   }
 }
 						</code></pre>
+
+						<ul>
+							<li class="fragment">Supports static types</li>
+							<li class="fragment">Compiles into JavaScript</li>
+							<li class="fragment">Full on SDK/framework and language</li>
+						</ul>
 					</section>
 
 					<section>
 						<h2>TypeScript</h2>
-
-						<ul>
-							<li class="fragment">Good middle-ground, outputs idiomatic JavaScript</li>
-							<li class="fragment">Looks more like ECMAScript 6</li>
-							<li class="fragment">Simpler than Dart, "it's just JavaScript"</li>
-						</ul>
 
 						<pre class="fragment"><code data-trim class="typescript">
 class Point {
@@ -410,7 +428,13 @@ class Point {
     return Math.sqrt(dx * dx + dy * dy);
   }
 }
-						</code></pre>						
+						</code></pre>	
+
+						<ul>
+							<li class="fragment">Good middle-ground, outputs idiomatic JavaScript</li>
+							<li class="fragment">Looks more like (and will target) ECMAScript 6</li>
+							<li class="fragment">Simpler than Dart, "it's just JavaScript"</li>
+						</ul>					
 					</section>
 
 					<section>

@@ -22,6 +22,14 @@
     <Content Include="classes\index.html" />
     <Content Include="dates\dates.js" />
     <Content Include="dates\index.html" />
+    <Content Include="errors\app.js" />
+    <Content Include="errors\data\chimes.wav" />
+    <Content Include="errors\data\chord.wav" />
+    <Content Include="errors\data\ding.wav" />
+    <Content Include="errors\data\notify.wav" />
+    <Content Include="errors\data\tada.wav" />
+    <Content Include="errors\displayAudio.js" />
+    <Content Include="errors\index.html" />
     <Content Include="index.html" />
     <Content Include="dates\moment.min.js" />
     <Content Include="types\index.html" />
@@ -31,6 +39,8 @@
     <Content Include="classes\classes.js" />
     <Content Include="types\types.js" />
     <TypeScriptCompile Include="dates\moment.d.ts" />
+    <TypeScriptCompile Include="errors\simple.ts" />
+    <Content Include="errors\audioFile.js" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
