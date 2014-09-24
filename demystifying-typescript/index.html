@@ -110,7 +110,8 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 					<section>
 						<h2>Declaration Files</h2>
 
-						<p>TODO</p>
+						<p>Declaration files make it easy to work with existing JavaScript libraries</p>
+						<p><a href="https://github.com/borisyankov/DefinitelyTyped">github.com/borisyankov/DefinitelyTyped</a></p>
 					</section>
 
 					<section>
@@ -119,7 +120,7 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 							&ldquo;TypeScript is not interoperable with JavaScript&rdquo;
 						</blockquote>
 						<p>&nbsp;</p>
-						<p class="fragment">No, it's a <em>superset</em> of JavaScript</p>										
+						<p class="fragment">TypeScript is a <em>superset</em> of JavaScript and you can use declaration files to work with existing codebases</p>										
 					</section>
 				</section>
 
@@ -182,23 +183,7 @@ Point.prototype.distance = function (other) {
 		Math.pow(this.x - other.x, 2) + 
 		Math.pow(this.y - other.y, 2));
 };
-</code></pre>						
-
-					<aside class="notes">
-					class Vector extends Point {
-	
-						/* Normalizes a vector to have a magnitude of 1 */
-						normalize(): Vector {
-					    	var d = this.distance();
-					    	if (d > 0) {
-					        	return new Vector(this.x / d, this.y / d);
-					     	} else {
-					        	return new Vector(0, 1);
-					     	}
-						}
-						
-					}
-					</aside>
+</code></pre>
 
 					</section>
 
@@ -443,26 +428,28 @@ class Point {
 						<h1>Practical Use Cases</h1>
 					</section>
 
-					<section>
+					<section data-background="img/kraken.jpg">
 						<h2>Games</h2>
 
 						<p>I've used TypeScript for over a year now in my own game(s)</p>
 						<p>Enforces a good structure and organization of my code</p>
-						<p>Show example of Ludum Dare game</p>
+						<p><a href="https://github.com/excaliburjs/Ludum-29">github.com/excaliburjs/Ludum-29</a></p>
 					</section>	
 
-					<section>
+					<section data-background="img/excalibur.jpg">
 						<h2>Libraries</h2>
 
-						<p>Provides type-safe API and is great for generating type-rich documentation</p>
-						<p>See Excalibur.js</p>
+						<p>Provides type-safe API and type-rich documentation</p>
+						<p>Provides structure and organization to your framework</p>
+						<p>Great for OSS projects where others can contribute</p>
+						<p><a href="https://github.com/excaliburjs/Excalibur">github.com/excaliburjs/Excalibur</a></p>
 					</section>
 
-					<section>
+					<section data-background="img/monaco.jpg">
 						<h2>Large Applications</h2>
 
 						<p>Visual Studio "Monaco" was written in TypeScript</p>
-						<p>See Build 2014 talk</p>
+						<p><a href="http://channel9.msdn.com/Events/Build/2014/3-583">bit.ly/buildts</a></p>
 					</section>
 				</section>
 				
