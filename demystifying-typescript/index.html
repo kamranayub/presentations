@@ -106,6 +106,13 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 							<li class="fragment">There is no overhead because TypeScript is not a runtime</li>
 						</ul>
 					</section>
+
+					<section>
+						<h2>Declaration Files</h2>
+
+						<p>TODO</p>
+					</section>
+
 					<section>
 						<h2>Myth #1</h2>
 						<blockquote>
@@ -286,16 +293,182 @@ Point.prototype.distance = function (other) {
 					</section>
 
 					<section>	
+						<blockquote>
+							&ldquo;Well, everything looks okay, let's run this&rdquo;
+						</blockquote>
+						<blockquote>
+							<code>TypeMismatch error: 'xyz' does not exist on type undefined</code>
+						</blockquote>
+						<blockquote>
+							&ldquo;**** ***ing ****!!!!&rdquo;
+						</blockquote>						
+						<p>&nbsp;</p>
+						<h2 class="fragment">Sound Familiar?</h2>
+					</section>
+
+					<section>	
+						<h2>How about this?</h2>
+
+						<blockquote>
+							&ldquo;We need to change one of the parts of this app&rdquo;
+						</blockquote>
+						<blockquote>
+							&ldquo;Ready the blood sacrifices so the JavaScript Refactor Gods will have mercy on our souls&rdquo;
+						</blockquote>	
+					</section>
+
+					<section>
+						<h1>Being afraid of your codebase is not good</h1>
+					</section>
+
+					<section>
+						<h2>The sad truth</h2>
+
+						<p>Not everyone writes JavaScript unit tests</p>
+					</section>
+
+					<section>
+						<h2>And even if you have tests</h2>
+
+						<p>TypeScript eliminates an entire class of errors</p>
+					</section>
+
+					<section>
+						<h2>A practical example</h2>
+
+						<p>TODO</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Myth #5</h2>
+						<blockquote>
+							&ldquo;TypeScript is like CoffeeScript or Dart&rdquo;
+						</blockquote>
+						<p class="fragment">AKA</p>
+						<blockquote class="fragment">
+							&ldquo;Don't we already have this?&rdquo;
+						</blockquote>
+					</section>
+
+					<section>
+						<h1>NOPE<span class="fragment">*</span></h1>
+					</section>
+
+					<section>
+						<h2>CoffeeScript</h2>
+
 						<ul>
-							<li><strong>Me:</strong> Well, everything looks okay, let's run this</li>
-							<li><strong>Console:</strong> <code>TypeMismatch error: 'xyz' does not exist on type undefined</code></li>
-							<li><strong>Me:</strong> ****!!!!</li>
-							<li><em>3 hours later</em></li>
-							<li><strong>Me:</strong> JavaScript ****ing sucks</li>
+							<li class="fragment">Inspired by Ruby</li>
+							<li class="fragment">Is not statically typed</li>
+							<li class="fragment">Is more of a "macro" language</li>
 						</ul>
 
-						<h2>Sound Familiar?</h2>
+						<pre class="fragment"><code data-trim class="coffeescript">
+class Point
+  constructor(@x, @y) ->
+
+  distance(other) ->
+    dx = @x - other.x
+    dy = @y - other.y
+    Math.sqrt dx * dx + dy * dy
+						</code></pre>
 					</section>
+
+					<section>
+						<h2>Dart</h2>
+
+						<ul>
+							<li class="fragment">Supports static types</li>
+							<li class="fragment">Compiles into JavaScript</li>
+							<li class="fragment">More of an SDK and framework</li>
+						</ul>
+
+						<pre class="fragment"><code data-trim class="dart">
+import 'dart:math';
+
+class Point {
+  num x;
+  num y;
+
+  Point(this.x, this.y);
+
+  num distance(Point p) {
+    num dx = x - p.x;
+    num dy = y - p.y;
+    return sqrt(dx * dx + dy * dy);
+  }
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>TypeScript</h2>
+
+						<ul>
+							<li class="fragment">Good middle-ground, outputs idiomatic JavaScript</li>
+							<li class="fragment">Looks more like ECMAScript 6</li>
+							<li class="fragment">Simpler than Dart, "it's just JavaScript"</li>
+						</ul>
+
+						<pre class="fragment"><code data-trim class="typescript">
+class Point {
+  constructor(public x: number, public y: number) {
+
+  }
+
+  distance(p: Point) {
+    var dx = this.x - p.x;
+    var dy = this.y - p.y;
+
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+}
+						</code></pre>						
+					</section>
+
+					<section>
+						<h2>Myth #5</h2>
+						<blockquote>
+							&ldquo;TypeScript is like CoffeeScript or Dart&rdquo;
+						</blockquote>
+						<p>&nbsp;</p>
+						<p class="fragment">There are pretty big differences between these languages</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Practical Use Cases</h1>
+					</section>
+
+					<section>
+						<h2>Games</h2>
+
+						<p>I've used TypeScript for over a year now in my own game(s)</p>
+						<p>Enforces a good structure and organization of my code</p>
+						<p>Show example of Ludum Dare game</p>
+					</section>	
+
+					<section>
+						<h2>Libraries</h2>
+
+						<p>Provides type-safe API and is great for generating type-rich documentation</p>
+						<p>See Excalibur.js</p>
+					</section>
+
+					<section>
+						<h2>Large Applications</h2>
+
+						<p>Visual Studio "Monaco" was written in TypeScript</p>
+						<p>See Build 2014 talk</p>
+					</section>
+				</section>
+				
+				<section>
+					<h1>Thank you</h1>
+					<p>@kamranayub - <a href="http://kamranicus.com">kamranicus.com</a></p>
 				</section>
 			</div>
 
