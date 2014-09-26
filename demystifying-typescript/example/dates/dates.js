@@ -9,4 +9,4 @@ var dateHelpers = {
 
 console.log("Today", today);
 console.log("Tomorrow", tomorrow);
-console.log("Next week", dateHelpers.nextWeek(today));
+console.log("Next week", dateHelpers.nextWeek(moment()));
