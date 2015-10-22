@@ -44,6 +44,7 @@
 			<div class="slides">
 				<section>
 					<h1>Demystifying TypeScript</h1>
+                    <h2 style="color: #E8B82A"><small>2015 Edition</small></h2>
 					<h3>5 Common Myths Debunked</h3>
 					<p>
 						<small>Created by <a href="http://kamranicus.com">Kamran Ayub</a> / <a href="http://twitter.com/kamranayub">@kamranayub</a></small>
@@ -55,7 +56,7 @@
 					<img src="img/yes_man.jpg">
 					<p>
 						I work at General Mills as an application developer, I maintain some open source projects,
-						and I like to play video games
+						and I like to play <a href="http://keeptrackofmygames.com/user/kamranicus">video games</a>
 					</p>		
 					<p><a href="http://github.com/kamranayub">github.com/kamranayub</a></p>			
 				</section>
@@ -134,7 +135,7 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 							&ldquo;TypeScript is not interoperable with JavaScript&rdquo;
 						</blockquote>
 						<p>&nbsp;</p>
-						<p class="fragment">TypeScript is a <em>typed superset</em> of JavaScript that compiles down to plain JavaScript</p>
+						<p class="fragment">TypeScript is a <em>typed superset</em> of JavaScript that compiles down to plain idiomatic JavaScript</p>
 					</section>
 				</section>
 
@@ -142,11 +143,11 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 					<section>
 						<h2>Myth #2</h2>
 						<blockquote>
-							&ldquo;It's a whole new language&rdquo;
+							&ldquo;I have to learn a whole new language&rdquo;
 						</blockquote>
 						<p class="fragment">AKA</p>
 						<blockquote class="fragment">
-							&ldquo;I have to re-learn JavaScript&rdquo;
+							&ldquo;I have to re-learn JavaScript, my existing skills are useless&rdquo;
 						</blockquote>
 					</section>
 
@@ -163,7 +164,7 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 						<ul>
 							<li class="fragment">TypeScript brings ECMAScript 6 to you now</li>
 							<li class="fragment">You will need to learn the new syntax <em>anyway</em></li>
-							<li class="fragment">There are only a few new things to learn</li>
+							<li class="fragment">There are only <s>a few</s> a handful of new things to learn</li>
 							<li class="fragment">TypeScript can target different versions of ECMAScript</li>
 						</ul>
 					</section>
@@ -171,51 +172,39 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 					<section>
 						<h2>Static Typing</h2>
 
-						<pre><code data-trim class="javascript">
-function distance(x1, y1, x2, y2) {
-	return Math.sqrt(
-		Math.pow(x1 - x2, 2) + 
-		Math.pow(y1 - y2, 2));
-}
-
-alert(distance(0, 0, 5, 5));   // OK
-alert(distance("a", 0, 5, 5)); // NaN
-</code></pre>
+						<h3>Example: 1-types.ts</h3>
 					</section>	
 
 					<section>
-						<h2>Classes &amp; Modules</h2>
+						<h2>Classes</h2>
 
-						<pre><code data-trim class="javascript">
-var Point = function (x, y) { 
-	this.x = x; 
-	this.y = y; 
-};
-Point.prototype.distance = function (other) {
-	other = other || new Point(0.0, 0.0);
-	return Math.sqrt(
-		Math.pow(this.x - other.x, 2) + 
-		Math.pow(this.y - other.y, 2));
-};
-</code></pre>
+						<h3>Example: 1-classes.ts</h3>
+					</section>
+                    
+                    <section>
+						<h2>Generics</h2>
 
+						<h3>Example: 1-generics.ts</h3>
 					</section>
 
 					<section>
 						<h2>And there's more!</h2>
 
-						<p>Classes, modules and static typing are only a few examples</p>
-						<p><small>Rest (...args), default parameters, overloading, fat arrow, interfaces, AMD/CommonJS modules, etc.</small></p>
-						<p><a href="http://www.typescriptlang.org/Playground">typescriptlang.org/Playground</a></p>
+						<p>Classes, generics and static typing are only a few examples</p>
+						<p><small>for..of, generators, async, type guards, decorators, computed properties, 
+                            string templates, union types, type aliases, intersection types, JSX (React) support, abstract/private/protected, 
+                            Rest (...args), default parameters, overloading, fat arrow, interfaces, 
+                            AMD/CommonJS modules, let, const, etc.</small></p>
+						<p><a href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript">TypeScript Release Notes</a></p>
 					</section>
 
 					<section>
 						<h2>Myth #2</h2>
 						<blockquote>
-							&ldquo;It's a whole new language&rdquo;
+							&ldquo;I have to learn a whole new language&rdquo;
 						</blockquote>
 						<p>&nbsp;</p>
-						<p class="fragment">Much of the syntax and features are borrowed straight from ECMAScript 6</p>
+						<p class="fragment">Existing experience transfers directly. Much of the syntax and features are borrowed straight from ECMAScript 6</p>
 					</section>
 				</section>
 
@@ -223,11 +212,11 @@ Point.prototype.distance = function (other) {
 					<section>
 						<h2>Myth #3</h2>
 						<blockquote>
-							&ldquo;You can only use TypeScript in Visual Studio&rdquo;
+							&ldquo;You can only use TypeScript in Windows&rdquo;
 						</blockquote>
 						<p class="fragment">AKA</p>
 						<blockquote class="fragment">
-							&ldquo;I'm on Linux!&rdquo;
+							&ldquo;My platform isn't supported!&rdquo;
 						</blockquote>
 					</section>
 
@@ -242,38 +231,43 @@ Point.prototype.distance = function (other) {
 					</section>
 
 					<section>
-						<h2>First-Class Experience</h2>
+						<h2>Windows First-Class Experience</h2>
+						
+						<p><a href="https://www.visualstudio.com/">Visual Studio Community 2015</a></p>
+						<p>Community edition is free (and is full-featured unlike previous Express versions)</p>
+					</section>
+                    
+                    <section>
+						<h2>Cross-Platform First-Class Experience</h2>
 
-						<p>Visual Studio provides the best tooling support, no question</p>
-						<p>&nbsp;</p>
-						<p>Express edition is free on Windows</p>
+						<p><a href="https://code.visualstudio.com/docs">Visual Studio Code</a></p>
+						<p>Cross-platform on Linux, Mac, and Windows. Full TypeScript (and Node.js debugging) support plus more.</p>
+                        <p><a href="https://code.visualstudio.com/updates">Monthly release cycle</a></p>
 					</section>
 
 					<section>
-						<h2>What about the rest of us?</h2>
+						<h2>And there's more...</h2>
 
 						<ul>
 							<li class="fragment">Sublime has a TypeScript plugin</li>
-							<li class="fragment">You can create a compile step in Grunt or Gulp</li>
+							<li class="fragment">You can create your own compile step in Grunt or Gulp</li>
 							<li class="fragment">You can <code>`npm install -g typescript`</code> on any platform</li>
-							<li class="fragment">WebStorm is a great alternative IDE for every platform: <a href="http://jetbrains.com/webstorm/">jetbrains.com/webstorm/</a></li>
+							<li class="fragment">WebStorm is also a great IDE for every platform: <a href="http://jetbrains.com/webstorm/">jetbrains.com/webstorm/</a></li>
 						</ul>
 					</section>
-
-					<section>
-						<h2>Let's do it now</h2>
-
-						<p>We're going to setup TypeScript in Sublime Text</p>
-						<p class="fragment">... and if we have time, Visual Studio "Monaco"</p>
-					</section>
+                    
+                    <section>
+                        <h2>VS Code Example</h2>
+                    </section>
 
 					<section>
 						<h2>Myth #3</h2>
 						<blockquote>
-							&ldquo;You can only use TypeScript in Visual Studio&rdquo;
+							&ldquo;You can only use TypeScript in Windows&rdquo;
 						</blockquote>
 						<p>&nbsp;</p>
-						<p class="fragment">TypeScript is open-source and can integrate with just about any editor you use</p>
+						<p class="fragment">TypeScript is open-source, has awesome cross-platform tooling, 
+                            and can integrate with just about any editor you use</p>
 					</section>
 				</section>
 
@@ -311,7 +305,7 @@ Point.prototype.distance = function (other) {
 							&ldquo;We need to change one of the parts of this app&rdquo;
 						</blockquote>
 						<blockquote>
-							&ldquo;Ready the blood sacrifices so the JavaScript Refactor Gods will have mercy on our souls&rdquo;
+							&ldquo;Ready the sacrificial offerings and speak the incantations so the JavaScript Refactor Gods will have mercy on our souls&rdquo;
 						</blockquote>	
 					</section>
 
@@ -328,7 +322,14 @@ Point.prototype.distance = function (other) {
 					<section>
 						<h2>And even if you have tests</h2>
 
-						<p>TypeScript eliminates an entire class of errors</p>
+						<p>TypeScript...</p>
+                        <ul>
+                            <li>eliminates an entire class of errors</li>
+                            <li>allows richer developer tooling (<strong>Intellisense!</strong>)</li>
+                            <li>makes your codebase leaner</li>
+                            <li>is flexible&mdash;use as much or as little as you want</li>
+                            <li>is pretty easy to learn</li>
+                        </ul>
 					</section>
 
 					<section>
@@ -407,7 +408,8 @@ class Point {
 
 						<ul>
 							<li class="fragment">Supports static types</li>
-							<li class="fragment">Compiles into JavaScript</li>
+							<li class="fragment">Compiles into non-idiomatic JavaScript</li>
+                            <li class="fragment">Can run in a Dartium VM (extra perf)</li>
 							<li class="fragment">Full on SDK/framework and language</li>
 						</ul>
 					</section>
@@ -433,7 +435,8 @@ class Point {
 						<ul>
 							<li class="fragment">Good middle-ground, outputs idiomatic JavaScript</li>
 							<li class="fragment">Looks more like (and will target) ECMAScript 6</li>
-							<li class="fragment">Simpler than Dart, "it's just JavaScript"</li>
+                            <li class="fragment">Rich editor tooling</li>
+							<li class="fragment">Simpler than Dart, "It's just JavaScript!&trade;"</li>
 						</ul>					
 					</section>
 
@@ -443,7 +446,7 @@ class Point {
 							&ldquo;TypeScript is like CoffeeScript or Dart&rdquo;
 						</blockquote>
 						<p>&nbsp;</p>
-						<p class="fragment">There are pretty big differences between these languages</p>
+						<p class="fragment">There are <strong>huge</strong> differences between these languages</p>
 					</section>
 				</section>
 
@@ -452,18 +455,21 @@ class Point {
 						<h1>Practical Use Cases</h1>
 					</section>
 
-					<section data-background="img/kraken.jpg">
+					<section data-background="img/minotaur.jpg">
 						<h2>Games</h2>
 
-						<p>I've used TypeScript for over a year now in my own game(s)</p>
+						<p>I've used TypeScript for over two years now in my own game(s)</p>
 						<p>Enforces a good structure and organization of my code</p>
-						<p><a href="https://github.com/excaliburjs/Ludum-29">github.com/excaliburjs/Ludum-29</a></p>
+						<p><a href="https://github.com/excaliburjs/Ludum-33">github.com/excaliburjs/Ludum-33</a></p>
+                        <p><a href="https://github.com/excaliburjs/Ludum-31">github.com/excaliburjs/Ludum-31</a></p>
+                        <p><a href="https://github.com/excaliburjs/Ludum-29">github.com/excaliburjs/Ludum-29</a></p>
 					</section>	
 
 					<section data-background="img/excalibur.jpg">
 						<h2>Libraries</h2>
 
-						<p>Provides type-safe API and type-rich documentation</p>
+                        <p>Angular 2 is adopting TypeScript</p>
+						<p>Provides type-safe API and <a href="http://excaliburjs.com/docs/api/edge/modules/ex.html">type-rich</a> documentation</p>
 						<p>Provides structure and organization to your framework</p>
 						<p>Great for OSS projects where others can contribute</p>
 						<p><a href="https://github.com/excaliburjs/Excalibur">github.com/excaliburjs/Excalibur</a></p>
@@ -472,10 +478,17 @@ class Point {
 					<section data-background="img/monaco.jpg">
 						<h2>Large Applications</h2>
 
-						<p>Visual Studio "Monaco" was written in TypeScript</p>
-						<p><a href="http://channel9.msdn.com/Events/Build/2014/3-583">bit.ly/buildts</a></p>
+						<p><a href="http://code.visualstudio.com">Visual Studio Code</a> is written in TypeScript</p>
+                        <p>The Microsoft <a href="http://portal.azure.com">Azure Blade UI (portal)</a> is written in TypeScript</p>
+                        <p><a href="https://angular.io/docs/ts/latest/quickstart.html">Angular 2</a> apps should be using TypeScript</p>                        						
 					</section>
 				</section>
+                
+                <section>
+                    <h2>Do you truly enjoy the loosey-goosey nature of Javascript <u>all the time</u>?</h2>
+                    <p class="fragment">It wasn't designed for scale. TypeScript is.</p>
+                    <p class="fragment">Go and get things done.</p>
+                </section>
 				
 				<section>
 					<h1>Thank you</h1>
