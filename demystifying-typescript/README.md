@@ -3,11 +3,8 @@ by Kamran Ayub
 
 Learn about 5 common misconceptions about TypeScript and decide for yourself.
 
-To watch presentation: Just run index.html or download PDF
-
-## Video
-
-2014 version on YouTube: https://www.youtube.com/watch?v=kb7tvaBJeMs
+- [View web version](http://kamranicus.com/presentations/demystifying-typescript/#/) (Oct, 2015)
+- [View on YouTube](https://www.youtube.com/watch?v=kb7tvaBJeMs) (Sep, 2014)
 
 ## Recommended Editors:
 
