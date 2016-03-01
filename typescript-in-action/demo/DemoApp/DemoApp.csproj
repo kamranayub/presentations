@@ -129,9 +129,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bower_components\bootstrap\dist\css\bootstrap.min.css" />
-    <Content Include="bower_components\bootstrap\dist\js\bootstrap.min.js" />
-    <Content Include="bower_components\jquery\dist\jquery.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\app.component.html" />
