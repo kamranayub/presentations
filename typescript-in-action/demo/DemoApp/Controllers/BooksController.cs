@@ -14,16 +14,16 @@ namespace DemoApp.Controllers
     public class BooksController : ApiController
     {
         [Route("")]
-        public Task<IEnumerable<UserBook>> Get()
+        public Task<ApiResponse<IEnumerable<UserBook>>> Get()
         {
-            return Task.FromResult(MockBooks.UserList.AsEnumerable());
+            return Task.FromResult(MockBooks.UserList.AsEnumerable().Wrap());
         }
 
         [HttpGet]
         [Route("search")]
-        public Task<IEnumerable<Book>> Search(string query)
+        public Task<ApiResponse<IEnumerable<Book>>> Search(string query)
         {
-            return Task.FromResult(MockBooks.SearchResults.AsEnumerable());
+            return Task.FromResult(MockBooks.SearchResults.AsEnumerable().Wrap());
         } 
 
     }

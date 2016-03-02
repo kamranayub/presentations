@@ -122,10 +122,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
+    <Compile Include="Framework\ApiExtensions.cs" />
     <Compile Include="Framework\MockBooks.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ApiResponse.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\UserBook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -168,7 +170,7 @@
     <TypeScriptCompile Include="Scripts\app\book.service.ts" />
     <TypeScriptCompile Include="Scripts\app\booklist.component.ts" />
     <TypeScriptCompile Include="Scripts\app\main.ts" />
-    <TypeScriptCompile Include="Scripts\app\mock-books.ts" />
+    <TypeScriptCompile Include="Scripts\app\models.ts" />
     <TypeScriptCompile Include="Scripts\app\search.component.ts" />
     <TypeScriptCompile Include="Scripts\typings\browser.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\browser\ambient\es6-shim\es6-shim.d.ts" />

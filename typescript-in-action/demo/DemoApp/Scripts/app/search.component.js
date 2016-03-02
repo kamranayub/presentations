@@ -34,7 +34,7 @@ System.register(['angular2/core', 'angular2/router', './book.service'], function
                     var _this = this;
                     this.query = decodeURI(this._routeParams.get('query'));
                     this._bookService.search(this.query)
-                        .then(function (results) {
+                        .subscribe(function (results) {
                         return _this.searchResults = results;
                     });
                 };

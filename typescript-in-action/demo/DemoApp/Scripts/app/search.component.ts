@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
         this.query = decodeURI(this._routeParams.get('query'));
 
         this._bookService.search(this.query)
-            .then(results =>
+            .subscribe(results =>
                 this.searchResults = results);
     }
 

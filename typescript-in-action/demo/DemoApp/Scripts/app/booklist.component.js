@@ -28,7 +28,7 @@ System.register(['angular2/core', './book.service'], function(exports_1, context
                 BookListComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     this._bookService.getBooks()
-                        .then(function (results) { return _this.books = results; });
+                        .subscribe(function (results) { return _this.books = results; });
                 };
                 BookListComponent = __decorate([
                     core_1.Component({

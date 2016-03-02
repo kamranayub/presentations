@@ -1,5 +1,6 @@
 ﻿import {Component} from 'angular2/core';
 import {RouteConfig, Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from "angular2/router";
+import {HTTP_PROVIDERS}    from 'angular2/http';
 
 import {BookService} from './book.service'
 import {BookListComponent} from './booklist.component'
@@ -8,7 +9,7 @@ import {SearchComponent} from './search.component'
 @Component({
     selector: 'my-app',
     directives: [ROUTER_DIRECTIVES],
-    providers: [ROUTER_PROVIDERS, BookService],
+    providers: [BookService, ROUTER_PROVIDERS, HTTP_PROVIDERS],
     styleUrls: ['scripts/app/app.component.css'],
     templateUrl: 'scripts/app/app.component.html'
 })
@@ -32,8 +33,9 @@ export class AppComponent {
     constructor(private _router: Router) {
 
     }
-
+    
     search() {
-        this._router.navigate(['Search', { query: this.searchQuery }]);
+        this._router.navigate(['Search', { query: this.searchQuery }]).then(
+            () => this.searchQuery = '');
     }
 }
