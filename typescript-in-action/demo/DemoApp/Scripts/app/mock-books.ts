@@ -1,13 +1,13 @@
 ﻿export var LIST = [
     {
-        title: 'Book 1',
-        author: 'Kamran Ayub',
+        title: 'The Path to A Total You',
+        author: 'Frank Harrison',
         added: new Date(2016, 2, 22),
         tags: ["loaned", "review-later"]
     },
     {
-        title: 'Book 2',
-        author: 'Joe Danger',
+        title: 'Cakes for Dummies',
+        author: 'Gerald Fungus',
         added: new Date(2016, 1, 16),
         tags: []
     }
