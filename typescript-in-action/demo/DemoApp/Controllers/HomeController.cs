@@ -8,10 +8,9 @@ namespace DemoApp.Controllers
 {
     public class HomeController : Controller
     {
+        [Route("{*catchall}", Name = "Default")]
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-
             return View();
         }
     }

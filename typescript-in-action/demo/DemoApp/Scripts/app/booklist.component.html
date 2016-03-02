@@ -1,0 +1,13 @@
+﻿<div class="row" *ngFor="#book of books">
+    <div class="col-xs-5">
+        <h3>{{book.title}} <small>{{book.author}}</small>
+        </h3>
+        <h5 class="text-muted">Added to your list {{book.added | date}}</h5>
+    </div>
+    <div class="col-xs-3 tags">
+        <span class="label label-default" *ngFor="#tag of book.tags">{{tag}}</span>
+    </div>
+    <div class="col-xs-3 lists">
+        Lists
+    </div>
+</div>

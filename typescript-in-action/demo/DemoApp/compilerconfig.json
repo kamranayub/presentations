@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Scripts/app/booklist.component.css",
+    "inputFile": "Scripts/app/booklist.component.less"
+  },
+  {
+    "outputFile": "Scripts/app/app.component.css",
+    "inputFile": "Scripts/app/app.component.less"
+  }
+]

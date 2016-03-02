@@ -131,7 +131,21 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\app\app.component.css">
+      <DependentUpon>app.component.less</DependentUpon>
+    </Content>
     <Content Include="Scripts\app\app.component.html" />
+    <Content Include="Scripts\app\app.component.min.css">
+      <DependentUpon>app.component.css</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\booklist.component.css">
+      <DependentUpon>booklist.component.less</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\booklist.component.html" />
+    <Content Include="Scripts\app\booklist.component.min.css">
+      <DependentUpon>booklist.component.css</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app\search.component.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -149,7 +163,11 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\app\app.component.ts" />
+    <TypeScriptCompile Include="Scripts\app\book.service.ts" />
+    <TypeScriptCompile Include="Scripts\app\booklist.component.ts" />
     <TypeScriptCompile Include="Scripts\app\main.ts" />
+    <TypeScriptCompile Include="Scripts\app\mock-books.ts" />
+    <TypeScriptCompile Include="Scripts\app\search.component.ts" />
     <TypeScriptCompile Include="Scripts\typings\browser.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\browser\ambient\es6-shim\es6-shim.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\main.d.ts" />
@@ -160,12 +178,21 @@
     <Content Include="package.json" />
     <Content Include=".bowerrc" />
     <Content Include="bower.json" />
-    <None Include="Project_Readme.html" />
     <Content Include="Scripts\tsconfig.json" />
     <Content Include="Scripts\typings.json" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\app\booklist.component.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Scripts\app\app.component.less" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
