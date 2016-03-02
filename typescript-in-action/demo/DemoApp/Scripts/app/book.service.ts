@@ -2,7 +2,8 @@
 import {Http, Response} from 'angular2/http'
 import {Observable} from 'rxjs/Observable'
 
-import {Book, UserBook} from './models'
+import {Book} from './Book'
+import {UserBook} from './UserBook'
 
 @Injectable()
 export class BookService {
@@ -11,7 +12,7 @@ export class BookService {
 
     getBooks() {
         return this._http.get('/api/books')
-            .map(res => (<UserBook[]>res.json().data).map(this._mapUserBook))
+            .map(res => (<UserBook[]>res.json().data).map(UserBook.fromJson))
             .catch(this._handleError);
     }
 
@@ -19,11 +20,6 @@ export class BookService {
         return this._http.get('/api/books/search?query=' + query)
             .map(res => <Book[]>res.json().data)
             .catch(this._handleError);
-    }
-
-    private _mapUserBook(book: UserBook) {
-        book.added = new Date(<any>book.added);
-        return book;
     }
 
     private _handleError(error: Response) {

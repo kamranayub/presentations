@@ -166,12 +166,23 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\app\ApiResponse.ts">
+      <DependentUpon>Models.tst</DependentUpon>
+      <CustomToolNamespace>Models\ApiResponse.cs</CustomToolNamespace>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Scripts\app\app.component.ts" />
     <TypeScriptCompile Include="Scripts\app\book.service.ts" />
+    <TypeScriptCompile Include="Scripts\app\Book.ts">
+      <DependentUpon>Models.tst</DependentUpon>
+      <CustomToolNamespace>Models\Book.cs</CustomToolNamespace>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Scripts\app\booklist.component.ts" />
     <TypeScriptCompile Include="Scripts\app\main.ts" />
-    <TypeScriptCompile Include="Scripts\app\models.ts" />
     <TypeScriptCompile Include="Scripts\app\search.component.ts" />
+    <TypeScriptCompile Include="Scripts\app\UserBook.ts">
+      <DependentUpon>Models.tst</DependentUpon>
+      <CustomToolNamespace>Models\UserBook.cs</CustomToolNamespace>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Scripts\typings\browser.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\browser\ambient\es6-shim\es6-shim.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\main.d.ts" />
@@ -197,6 +208,7 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <Content Include="Scripts\app\app.component.less" />
+    <Content Include="Scripts\app\Models.tst" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
