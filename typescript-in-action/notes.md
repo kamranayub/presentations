@@ -12,4 +12,4 @@
 - Show where we need to fill in implementation
 - Services/Models
 - Extensions
-    - Typewriter for Visual Studio     
+    - Typewriter for Visual Studio
