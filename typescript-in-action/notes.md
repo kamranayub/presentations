@@ -18,6 +18,7 @@
 
 Stuff to do in demo...
 
+- Implement list of books
 - Implement searching
 - Implement service to get books from API
 - Implement adding a book
