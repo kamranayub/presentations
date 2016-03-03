@@ -122,14 +122,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
-    <Compile Include="Framework\ApiExtensions.cs" />
     <Compile Include="Framework\MockBooks.cs" />
+    <Compile Include="Framework\WrapResponseAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ApiResponse.cs" />
+    <Compile Include="Models\SearchResult.cs" />
     <Compile Include="Models\Book.cs" />
-    <Compile Include="Models\UserBook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -166,22 +165,21 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\app\ApiResponse.ts">
-      <DependentUpon>Models.tst</DependentUpon>
-      <CustomToolNamespace>Models\ApiResponse.cs</CustomToolNamespace>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="Scripts\app\app.component.ts" />
-    <TypeScriptCompile Include="Scripts\app\book.service.ts" />
-    <TypeScriptCompile Include="Scripts\app\Book.ts">
+    <TypeScriptCompile Include="Scripts\app\book.service.ts">
+      <DependentUpon>Services.tst</DependentUpon>
+      <CustomToolNamespace>Controllers\BooksController.cs</CustomToolNamespace>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Scripts\app\SearchResult.ts">
       <DependentUpon>Models.tst</DependentUpon>
-      <CustomToolNamespace>Models\Book.cs</CustomToolNamespace>
+      <CustomToolNamespace>Models\SearchResult.cs</CustomToolNamespace>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Scripts\app\booklist.component.ts" />
     <TypeScriptCompile Include="Scripts\app\main.ts" />
     <TypeScriptCompile Include="Scripts\app\search.component.ts" />
-    <TypeScriptCompile Include="Scripts\app\UserBook.ts">
+    <TypeScriptCompile Include="Scripts\app\Book.ts">
       <DependentUpon>Models.tst</DependentUpon>
-      <CustomToolNamespace>Models\UserBook.cs</CustomToolNamespace>
+      <CustomToolNamespace>Models\Book.cs</CustomToolNamespace>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Scripts\typings\browser.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\browser\ambient\es6-shim\es6-shim.d.ts" />
@@ -209,6 +207,7 @@
     </None>
     <Content Include="Scripts\app\app.component.less" />
     <Content Include="Scripts\app\Models.tst" />
+    <Content Include="Scripts\app\Services.tst" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

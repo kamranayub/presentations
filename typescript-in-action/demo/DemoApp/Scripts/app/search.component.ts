@@ -1,9 +1,12 @@
 ﻿import {Component, OnInit} from 'angular2/core'
-import {RouteParams} from 'angular2/router'
+import {Router, RouteParams} from 'angular2/router'
 
 import {BookService} from './book.service'
 
 @Component({
+    styles: [`
+    ul li { margin-bottom: 1em; }
+    `],
     templateUrl: 'scripts/app/search.component.html'
 })
 export class SearchComponent implements OnInit {
@@ -13,7 +16,8 @@ export class SearchComponent implements OnInit {
 
     constructor(
         private _bookService: BookService,
-        private _routeParams: RouteParams) {
+        private _routeParams: RouteParams,
+        private _router: Router) {
         
     }
 
@@ -26,6 +30,10 @@ export class SearchComponent implements OnInit {
     }
 
     addBook(id: number) {
-        // TODO
+        this._bookService.postBook(id)
+            .subscribe(book => {
+                alert("Successfully added book: " + book.title);
+                this._router.navigate(['Books']);
+            });
     }
 }

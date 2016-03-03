@@ -25,9 +25,10 @@ System.register(['angular2/core', 'angular2/router', './book.service'], function
             }],
         execute: function() {
             SearchComponent = (function () {
-                function SearchComponent(_bookService, _routeParams) {
+                function SearchComponent(_bookService, _routeParams, _router) {
                     this._bookService = _bookService;
                     this._routeParams = _routeParams;
+                    this._router = _router;
                     this.searchResults = [];
                 }
                 SearchComponent.prototype.ngOnInit = function () {
@@ -39,13 +40,19 @@ System.register(['angular2/core', 'angular2/router', './book.service'], function
                     });
                 };
                 SearchComponent.prototype.addBook = function (id) {
-                    // TODO
+                    var _this = this;
+                    this._bookService.postBook(id)
+                        .subscribe(function (book) {
+                        alert("Successfully added book: " + book.title);
+                        _this._router.navigate(['Books']);
+                    });
                 };
                 SearchComponent = __decorate([
                     core_1.Component({
+                        styles: ["\n    ul li { margin-bottom: 1em; }\n    "],
                         templateUrl: 'scripts/app/search.component.html'
                     }), 
-                    __metadata('design:paramtypes', [book_service_1.BookService, router_1.RouteParams])
+                    __metadata('design:paramtypes', [book_service_1.BookService, router_1.RouteParams, router_1.Router])
                 ], SearchComponent);
                 return SearchComponent;
             }());

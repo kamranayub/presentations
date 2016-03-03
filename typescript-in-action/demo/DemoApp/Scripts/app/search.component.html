@@ -2,8 +2,11 @@
 
 <p>Found {{searchResults.length}} results:</p>
 
-<ul>
+<ul class="list-unstyled">
     <li *ngFor="#result of searchResults">
-        <a (click)="addBook(result)">{{result.title}}</a> <small>{{result.author}}</small>
+        <a (click)="addBook(result.id)" class="btn btn-primary">
+            <strong>{{result.title}}</strong>
+            <small>{{result.author}}</small>
+        </a>
     </li>
 </ul>

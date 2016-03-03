@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', './UserBook'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', './Book', './SearchResult'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', './UserBoo
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, Observable_1, UserBook_1;
+    var core_1, http_1, Observable_1, Book_1, SearchResult_1;
     var BookService;
     return {
         setters:[
@@ -23,8 +23,11 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', './UserBoo
             function (Observable_1_1) {
                 Observable_1 = Observable_1_1;
             },
-            function (UserBook_1_1) {
-                UserBook_1 = UserBook_1_1;
+            function (Book_1_1) {
+                Book_1 = Book_1_1;
+            },
+            function (SearchResult_1_1) {
+                SearchResult_1 = SearchResult_1_1;
             }],
         execute: function() {
             BookService = (function () {
@@ -32,13 +35,18 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', './UserBoo
                     this._http = _http;
                 }
                 BookService.prototype.getBooks = function () {
-                    return this._http.get('/api/books')
-                        .map(function (res) { return res.json().data.map(UserBook_1.UserBook.fromJson); })
+                    return this._http.get("api/books", null)
+                        .map(function (res) { return res.json().data.map(Book_1.Book.fromJson); })
+                        .catch(this._handleError);
+                };
+                BookService.prototype.postBook = function (id) {
+                    return this._http.post("api/books/" + id, null)
+                        .map(function (res) { return Book_1.Book.fromJson(res.json().data); })
                         .catch(this._handleError);
                 };
                 BookService.prototype.search = function (query) {
-                    return this._http.get('/api/books/search?query=' + query)
-                        .map(function (res) { return res.json().data; })
+                    return this._http.get("api/books/search?query=" + query, null)
+                        .map(function (res) { return res.json().data.map(SearchResult_1.SearchResult.fromJson); })
                         .catch(this._handleError);
                 };
                 BookService.prototype._handleError = function (error) {

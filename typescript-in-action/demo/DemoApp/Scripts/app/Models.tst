@@ -8,33 +8,16 @@
         }
         return $"model.{property.name}";
     }
-
-    string extends(Class c) {
-        if (c.BaseClass != "") return $"extends {c.BaseClass}";
-        return "";
-    }
-
-    string importBaseClass(Class c) {
-        if (c.BaseClass != "") return $"import {{{c.BaseClass}}} from './{c.BaseClass}'";
-        return "";
-    }
-
-    string superNew(Class c) {
-        // call `fromJson` on super if needed
-        if (c.BaseClass != "") return $"<{c.Name}>{c.BaseClass}.fromJson(model)";
-        return $"new {c.Name}{c.TypeArguments}()";
-    }
 }
 
 $Classes(DemoApp.Models.*)[
-$importBaseClass
-export class $Name$TypeParameters $extends {
+export class $Name {
 
     $Properties[
     public $name: $Type = $Type[$Default];]
 
-    public static fromJson$TypeParameters (model: any): $Name$TypeParameters {
-        var o = $superNew;
+    public static fromJson(model: any): $Name {
+        var o = new $Name();
         $Properties[
         o.$name = $setValue;]
         return o;
