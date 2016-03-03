@@ -1,4 +1,4 @@
-System.register(['angular2/core', './book.service'], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,33 +10,25 @@ System.register(['angular2/core', './book.service'], function(exports_1, context
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, book_service_1;
+    var core_1;
     var BookListComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (book_service_1_1) {
-                book_service_1 = book_service_1_1;
             }],
         execute: function() {
             BookListComponent = (function () {
-                function BookListComponent(_bookService) {
-                    this._bookService = _bookService;
+                function BookListComponent() {
+                    this.books = [];
                 }
-                BookListComponent.prototype.ngOnInit = function () {
-                    var _this = this;
-                    this._bookService.getBooks()
-                        .subscribe(function (results) { return _this.books = results; });
-                };
                 BookListComponent = __decorate([
                     core_1.Component({
                         selector: 'book-list',
                         styleUrls: ['scripts/app/booklist.component.css'],
                         templateUrl: 'scripts/app/booklist.component.html'
                     }), 
-                    __metadata('design:paramtypes', [book_service_1.BookService])
+                    __metadata('design:paramtypes', [])
                 ], BookListComponent);
                 return BookListComponent;
             }());

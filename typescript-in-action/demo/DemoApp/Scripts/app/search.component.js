@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './book.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './book.service'], function
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, book_service_1;
+    var core_1, router_1;
     var SearchComponent;
     return {
         setters:[
@@ -19,40 +19,25 @@ System.register(['angular2/core', 'angular2/router', './book.service'], function
             },
             function (router_1_1) {
                 router_1 = router_1_1;
-            },
-            function (book_service_1_1) {
-                book_service_1 = book_service_1_1;
             }],
         execute: function() {
             SearchComponent = (function () {
-                function SearchComponent(_bookService, _routeParams, _router) {
-                    this._bookService = _bookService;
+                function SearchComponent(_routeParams, _router) {
                     this._routeParams = _routeParams;
                     this._router = _router;
                     this.searchResults = [];
                 }
-                SearchComponent.prototype.ngOnInit = function () {
-                    var _this = this;
-                    this.query = decodeURI(this._routeParams.get('query'));
-                    this._bookService.search(this.query)
-                        .subscribe(function (results) {
-                        return _this.searchResults = results;
-                    });
-                };
+                // TODO fill `search` from URL
+                // TODO call API and fill in results
                 SearchComponent.prototype.addBook = function (id) {
-                    var _this = this;
-                    this._bookService.postBook(id)
-                        .subscribe(function (book) {
-                        alert("Successfully added book: " + book.title);
-                        _this._router.navigate(['Books']);
-                    });
+                    // TODO implement add book
                 };
                 SearchComponent = __decorate([
                     core_1.Component({
                         styles: ["\n    ul li { margin-bottom: 1em; }\n    "],
                         templateUrl: 'scripts/app/search.component.html'
                     }), 
-                    __metadata('design:paramtypes', [book_service_1.BookService, router_1.RouteParams, router_1.Router])
+                    __metadata('design:paramtypes', [router_1.RouteParams, router_1.Router])
                 ], SearchComponent);
                 return SearchComponent;
             }());

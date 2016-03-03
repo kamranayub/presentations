@@ -1,4 +1,4 @@
-System.register(['angular2/core', "angular2/router", 'angular2/http', './book.service', './booklist.component', './search.component'], function(exports_1, context_1) {
+System.register(['angular2/core', "angular2/router", 'angular2/http', './booklist.component', './search.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "angular2/router", 'angular2/http', './book.se
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, http_1, book_service_1, booklist_component_1, search_component_1;
+    var core_1, router_1, http_1, booklist_component_1, search_component_1;
     var AppComponent;
     return {
         setters:[
@@ -23,9 +23,6 @@ System.register(['angular2/core', "angular2/router", 'angular2/http', './book.se
             function (http_1_1) {
                 http_1 = http_1_1;
             },
-            function (book_service_1_1) {
-                book_service_1 = book_service_1_1;
-            },
             function (booklist_component_1_1) {
                 booklist_component_1 = booklist_component_1_1;
             },
@@ -34,19 +31,16 @@ System.register(['angular2/core', "angular2/router", 'angular2/http', './book.se
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent(_router) {
-                    this._router = _router;
-                    this.searchQuery = "";
+                function AppComponent() {
                 }
+                // TODO add search functionality
                 AppComponent.prototype.search = function () {
-                    var _this = this;
-                    this._router.navigate(['Search', { query: this.searchQuery }]).then(function () { return _this.searchQuery = ''; });
                 };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
                         directives: [router_1.ROUTER_DIRECTIVES],
-                        providers: [book_service_1.BookService, router_1.ROUTER_PROVIDERS, http_1.HTTP_PROVIDERS],
+                        providers: [router_1.ROUTER_PROVIDERS, http_1.HTTP_PROVIDERS],
                         styleUrls: ['scripts/app/app.component.css'],
                         templateUrl: 'scripts/app/app.component.html'
                     }),
@@ -63,7 +57,7 @@ System.register(['angular2/core', "angular2/router", 'angular2/http', './book.se
                             component: search_component_1.SearchComponent
                         }
                     ]), 
-                    __metadata('design:paramtypes', [router_1.Router])
+                    __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
             }());

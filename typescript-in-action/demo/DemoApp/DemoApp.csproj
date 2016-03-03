@@ -166,21 +166,9 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\app\app.component.ts" />
-    <TypeScriptCompile Include="Scripts\app\book.service.ts">
-      <DependentUpon>Services.tst</DependentUpon>
-      <CustomToolNamespace>Controllers\BooksController.cs</CustomToolNamespace>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Scripts\app\SearchResult.ts">
-      <DependentUpon>Models.tst</DependentUpon>
-      <CustomToolNamespace>Models\SearchResult.cs</CustomToolNamespace>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="Scripts\app\booklist.component.ts" />
     <TypeScriptCompile Include="Scripts\app\main.ts" />
     <TypeScriptCompile Include="Scripts\app\search.component.ts" />
-    <TypeScriptCompile Include="Scripts\app\Book.ts">
-      <DependentUpon>Models.tst</DependentUpon>
-      <CustomToolNamespace>Models\Book.cs</CustomToolNamespace>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="Scripts\typings\browser.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\browser\ambient\es6-shim\es6-shim.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\main.d.ts" />
@@ -206,8 +194,6 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <Content Include="Scripts\app\app.component.less" />
-    <Content Include="Scripts\app\Models.tst" />
-    <Content Include="Scripts\app\Services.tst" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

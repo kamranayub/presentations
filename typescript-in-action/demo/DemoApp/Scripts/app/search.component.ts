@@ -1,7 +1,5 @@
-﻿import {Component, OnInit} from 'angular2/core'
+﻿import {Component} from 'angular2/core'
 import {Router, RouteParams} from 'angular2/router'
-
-import {BookService} from './book.service'
 
 @Component({
     styles: [`
@@ -9,31 +7,22 @@ import {BookService} from './book.service'
     `],
     templateUrl: 'scripts/app/search.component.html'
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
     public query: string;
 
-    public searchResults: any[] = [];
+    public searchResults = [];
 
     constructor(
-        private _bookService: BookService,
         private _routeParams: RouteParams,
         private _router: Router) {
         
     }
+    
+    // TODO fill `search` from URL
 
-    ngOnInit() {
-        this.query = decodeURI(this._routeParams.get('query'));
-
-        this._bookService.search(this.query)
-            .subscribe(results =>
-                this.searchResults = results);
-    }
-
+    // TODO call API and fill in results
+    
     addBook(id: number) {
-        this._bookService.postBook(id)
-            .subscribe(book => {
-                alert("Successfully added book: " + book.title);
-                this._router.navigate(['Books']);
-            });
+        // TODO implement add book
     }
 }

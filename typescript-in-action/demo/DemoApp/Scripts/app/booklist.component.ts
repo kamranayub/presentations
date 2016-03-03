@@ -1,21 +1,18 @@
-﻿import {Component, OnInit} from 'angular2/core'
-
-import {BookService} from './book.service'
+﻿import {Component} from 'angular2/core'
 
 @Component({
     selector: 'book-list',
     styleUrls: ['scripts/app/booklist.component.css'],
     templateUrl: 'scripts/app/booklist.component.html'    
 })
-export class BookListComponent implements OnInit {
-    public books: any[];
+export class BookListComponent {
+    public books = [];
 
-    constructor(private _bookService: BookService) {
+    constructor() {
         
     }
 
-    ngOnInit() {
-        this._bookService.getBooks()
-            .subscribe(results => this.books = results);
-    }
+    // TODO get my books    
+
+    // TODO BONUS: Implement lists
 }
