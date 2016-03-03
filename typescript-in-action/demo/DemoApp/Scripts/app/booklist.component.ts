@@ -12,7 +12,5 @@ export class BookListComponent {
         
     }
 
-    // TODO get my books    
-
-    // TODO BONUS: Implement lists
+    // TODO get my books
 }

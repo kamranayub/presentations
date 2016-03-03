@@ -23,8 +23,7 @@ Stuff to do in demo...
 - Implement service to get books from API
 - Implement adding a book
 - Add a way to generate client-side models from C# models
-- Add a way to generate Angular services from Web API controllers    
-- **BONUS:** Implement lists (creating, getting, viewing)
+- Add a way to generate Angular services from Web API controllers
     
 ## Models
 
