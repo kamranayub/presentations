@@ -26,7 +26,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -202,7 +203,10 @@ ClientBin/
 *.dbproj.schemaview
 *.pfx
 *.publishsettings
+# Node
 node_modules/
+# Bower
+bower_components/
 
 # RIA/Silverlight projects
 Generated_Code/

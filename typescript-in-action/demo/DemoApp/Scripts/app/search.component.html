@@ -1,0 +1,12 @@
+﻿<h2>{{query}}</h2>
+
+<p>Found {{searchResults.length}} results:</p>
+
+<ul class="list-unstyled">
+    <li *ngFor="#result of searchResults">
+        <a (click)="addBook(result.id)" class="btn btn-primary">
+            <strong>{{result.title}}</strong>
+            <small>{{result.author}}</small>
+        </a>
+    </li>
+</ul>

@@ -1,0 +1,23 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-xs-8">
+            <h1>
+                <a [routerLink]="['Books']">Bestreads</a> <small>Love your books</small>
+            </h1>
+        </div>
+        <div class="col-xs-4 search">
+            <form (submit)="search()">
+                <span class="input-group">
+                    <input [(ngModel)]="searchQuery"
+                           class="form-control"
+                           placeholder="Find a book..." />
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit">Go</button>
+                    </span>
+                </span>
+            </form>
+        </div>
+    </div>
+
+    <router-outlet></router-outlet>
+</div>
