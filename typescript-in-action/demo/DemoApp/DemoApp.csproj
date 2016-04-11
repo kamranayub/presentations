@@ -129,6 +129,7 @@
     </Compile>
     <Compile Include="Models\SearchResult.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\SortBy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
