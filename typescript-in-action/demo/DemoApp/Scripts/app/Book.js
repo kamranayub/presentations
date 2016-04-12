@@ -1,29 +1,82 @@
-System.register([], function(exports_1, context_1) {
+System.register(['./Decorators'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
+    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+    var __metadata = (this && this.__metadata) || function (k, v) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+    var Decorators_1;
     var Book;
     return {
-        setters:[],
+        setters:[
+            function (Decorators_1_1) {
+                Decorators_1 = Decorators_1_1;
+            }],
         execute: function() {
             Book = (function () {
                 function Book() {
-                    this.id = 0;
-                    this.title = null;
-                    this.author = null;
-                    this.added = null;
-                    this.tags = [];
-                    this.lists = [];
+                    this._id = 0;
+                    this._title = null;
+                    this._author = null;
+                    this._added = null;
+                    this._tags = [];
+                    this._lists = [];
                 }
+                Object.defineProperty(Book.prototype, "id", {
+                    get: function () { return this._id; },
+                    set: function (value) { this._id = value; },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(Book.prototype, "title", {
+                    get: function () { return this._title; },
+                    set: function (value) { this._title = value; },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(Book.prototype, "author", {
+                    get: function () { return this._author; },
+                    set: function (value) { this._author = value; },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(Book.prototype, "added", {
+                    get: function () { return this._added; },
+                    set: function (value) { this._added = value; },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(Book.prototype, "tags", {
+                    get: function () { return this._tags; },
+                    set: function (value) { this._tags = value; },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(Book.prototype, "lists", {
+                    get: function () { return this._lists; },
+                    set: function (value) { this._lists = value; },
+                    enumerable: true,
+                    configurable: true
+                });
                 Book.fromJson = function (model) {
                     var o = new Book();
                     o.id = model.id;
                     o.title = model.title;
                     o.author = model.author;
-                    o.added = new Date(model.added);
+                    o.added = model.added;
                     o.tags = model.tags;
                     o.lists = model.lists;
                     return o;
                 };
+                __decorate([
+                    Decorators_1.DateStringConverter, 
+                    __metadata('design:type', Date)
+                ], Book.prototype, "added", null);
                 return Book;
             }());
             exports_1("Book", Book);

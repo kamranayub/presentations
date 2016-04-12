@@ -44,8 +44,8 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', './Book', 
                         .map(function (res) { return Book_1.Book.fromJson(res.json().data); })
                         .catch(this._handleError);
                 };
-                BookService.prototype.search = function (query) {
-                    return this._http.get("api/books/search?query=" + query, null)
+                BookService.prototype.search = function (query, sortBy) {
+                    return this._http.get("api/books/search?query=" + query + "&sortBy=" + sortBy, null)
                         .map(function (res) { return res.json().data.map(SearchResult_1.SearchResult.fromJson); })
                         .catch(this._handleError);
                 };

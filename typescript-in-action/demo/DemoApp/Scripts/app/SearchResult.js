@@ -7,10 +7,28 @@ System.register([], function(exports_1, context_1) {
         execute: function() {
             SearchResult = (function () {
                 function SearchResult() {
-                    this.id = 0;
-                    this.title = null;
-                    this.author = null;
+                    this._id = 0;
+                    this._title = null;
+                    this._author = null;
                 }
+                Object.defineProperty(SearchResult.prototype, "id", {
+                    get: function () { return this._id; },
+                    set: function (value) { this._id = value; },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(SearchResult.prototype, "title", {
+                    get: function () { return this._title; },
+                    set: function (value) { this._title = value; },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(SearchResult.prototype, "author", {
+                    get: function () { return this._author; },
+                    set: function (value) { this._author = value; },
+                    enumerable: true,
+                    configurable: true
+                });
                 SearchResult.fromJson = function (model) {
                     var o = new SearchResult();
                     o.id = model.id;

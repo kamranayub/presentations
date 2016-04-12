@@ -129,6 +129,7 @@
     </Compile>
     <Compile Include="Models\SearchResult.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\SortBy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +171,7 @@
       <DependentUpon>Services.tst</DependentUpon>
       <CustomToolNamespace>Controllers\BooksController.cs</CustomToolNamespace>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Scripts\app\Decorators.ts" />
     <TypeScriptCompile Include="Scripts\app\SearchResult.ts">
       <DependentUpon>Models.tst</DependentUpon>
       <CustomToolNamespace>Models\SearchResult.cs</CustomToolNamespace>
@@ -180,6 +182,10 @@
     <TypeScriptCompile Include="Scripts\app\Book.ts">
       <DependentUpon>Models.tst</DependentUpon>
       <CustomToolNamespace>Models\Book.cs</CustomToolNamespace>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Scripts\app\SortBy.ts">
+      <DependentUpon>Enums.tst</DependentUpon>
+      <CustomToolNamespace>Models\SortBy.cs</CustomToolNamespace>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Scripts\typings\browser.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\browser\ambient\es6-shim\es6-shim.d.ts" />
@@ -208,6 +214,7 @@
     <Content Include="Scripts\app\app.component.less" />
     <Content Include="Scripts\app\Models.tst" />
     <Content Include="Scripts\app\Services.tst" />
+    <Content Include="Scripts\app\Enums.tst" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -14,6 +14,8 @@ export class SearchComponent implements OnInit {
 
     public searchResults: any[] = [];
 
+    public sortBy: SortBy = "Name";
+
     constructor(
         private _bookService: BookService,
         private _routeParams: RouteParams,
@@ -23,8 +25,9 @@ export class SearchComponent implements OnInit {
 
     ngOnInit() {
         this.query = decodeURI(this._routeParams.get('query'));
+        this.sortBy = <SortBy>this._routeParams.get('sortBy') || "Name";
 
-        this._bookService.search(this.query)
+        this._bookService.search(this.query, this.sortBy)
             .subscribe(results =>
                 this.searchResults = results);
     }

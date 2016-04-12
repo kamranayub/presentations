@@ -30,11 +30,13 @@ System.register(['angular2/core', 'angular2/router', './book.service'], function
                     this._routeParams = _routeParams;
                     this._router = _router;
                     this.searchResults = [];
+                    this.sortBy = "Name";
                 }
                 SearchComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     this.query = decodeURI(this._routeParams.get('query'));
-                    this._bookService.search(this.query)
+                    this.sortBy = this._routeParams.get('sortBy') || "Name";
+                    this._bookService.search(this.query, this.sortBy)
                         .subscribe(function (results) {
                         return _this.searchResults = results;
                     });

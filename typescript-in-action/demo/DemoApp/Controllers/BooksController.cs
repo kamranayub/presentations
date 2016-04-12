@@ -41,7 +41,7 @@ namespace DemoApp.Controllers
 
         [HttpGet]
         [Route("search")]
-        public Task<IEnumerable<SearchResult>> Search(string query)
+        public Task<IEnumerable<SearchResult>> Search(string query, SortBy sortBy)
         {
             return Task.FromResult(MockBooks.SearchResults.AsEnumerable());
         } 

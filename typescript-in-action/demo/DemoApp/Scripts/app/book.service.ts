@@ -23,8 +23,8 @@ export class BookService {
             .map(res => Book.fromJson(res.json().data))
             .catch(this._handleError);
     }
-    search(query: string) {
-        return this._http.get(`api/books/search?query=${query}`, null)
+    search(query: string,sortBy: SortBy) {
+        return this._http.get(`api/books/search?query=${query}&sortBy=${sortBy}`, null)
             .map(res => (<SearchResult[]>res.json().data).map(SearchResult.fromJson))
             .catch(this._handleError);
     }
