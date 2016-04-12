@@ -26,8 +26,9 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                     this._routeParams = _routeParams;
                     this._router = _router;
                     this.searchResults = [];
+                    this.sortBy = "Name";
                 }
-                // TODO fill `search` from URL
+                // TODO fill `search` and `sortBy` from URL
                 // TODO call API and fill in results
                 SearchComponent.prototype.addBook = function (id) {
                     // TODO implement add book

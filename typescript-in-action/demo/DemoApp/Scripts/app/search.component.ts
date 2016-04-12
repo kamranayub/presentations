@@ -12,13 +12,15 @@ export class SearchComponent {
 
     public searchResults = [];
 
+    public sortBy = "Name";
+
     constructor(
         private _routeParams: RouteParams,
         private _router: Router) {
         
     }
     
-    // TODO fill `search` from URL
+    // TODO fill `search` and `sortBy` from URL
 
     // TODO call API and fill in results
     
