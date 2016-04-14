@@ -28,10 +28,10 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                     this.searchResults = [];
                     this.sortBy = "Name";
                 }
-                // TODO fill `search` and `sortBy` from URL
-                // TODO call API and fill in results
+                // TODO 3. Fill `search` and `sortBy` from URL
+                // TODO 4. Call BookService and fill in results
                 SearchComponent.prototype.addBook = function (id) {
-                    // TODO implement add book
+                    // TODO 5. Call BookService and add requested book to user's collection
                 };
                 SearchComponent = __decorate([
                     core_1.Component({

@@ -33,7 +33,8 @@ System.register(['angular2/core', "angular2/router", 'angular2/http', './booklis
             AppComponent = (function () {
                 function AppComponent() {
                 }
-                // TODO add search functionality
+                // TODO 2. Capture `searchQuery` from form input    
+                // and then navigate to search results
                 AppComponent.prototype.search = function () {
                 };
                 AppComponent = __decorate([

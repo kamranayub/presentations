@@ -20,11 +20,11 @@ export class SearchComponent {
         
     }
     
-    // TODO fill `search` and `sortBy` from URL
+    // TODO 3. Fill `search` and `sortBy` from URL
 
-    // TODO call API and fill in results
+    // TODO 4. Call BookService and fill in results
     
     addBook(id: number) {
-        // TODO implement add book
+        // TODO 5. Call BookService and add requested book to user's collection
     }
 }

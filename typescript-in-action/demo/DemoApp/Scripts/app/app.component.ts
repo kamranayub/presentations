@@ -25,9 +25,10 @@ import {SearchComponent} from './search.component'
         component: SearchComponent        
     }
 ])
-export class AppComponent {
+export class AppComponent {        
 
-    // TODO add search functionality
+    // TODO 2. Capture `searchQuery` from form input    
+    // and then navigate to search results
     search() {
         
     }
