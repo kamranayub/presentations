@@ -4,11 +4,12 @@ import {HTTP_PROVIDERS}    from 'angular2/http';
 
 import {BookListComponent} from './booklist.component'
 import {SearchComponent} from './search.component'
+import {BookService} from './book.service'
 
 @Component({
     selector: 'my-app',
     directives: [ROUTER_DIRECTIVES],
-    providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS],
+    providers: [BookService, ROUTER_PROVIDERS, HTTP_PROVIDERS],
     styleUrls: ['scripts/app/app.component.css'],
     templateUrl: 'scripts/app/app.component.html'
 })
@@ -26,6 +27,8 @@ import {SearchComponent} from './search.component'
     }
 ])
 export class AppComponent {        
+
+    constructor(private _bookService: BookService) { }
 
     // TODO 2. Capture `searchQuery` from form input    
     // and then navigate to search results

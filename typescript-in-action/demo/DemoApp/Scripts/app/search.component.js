@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './book.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1;
+    var core_1, router_1, book_service_1;
     var SearchComponent;
     return {
         setters:[
@@ -19,17 +19,23 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
             },
             function (router_1_1) {
                 router_1 = router_1_1;
+            },
+            function (book_service_1_1) {
+                book_service_1 = book_service_1_1;
             }],
         execute: function() {
             SearchComponent = (function () {
-                function SearchComponent(_routeParams, _router) {
+                function SearchComponent(_routeParams, _router, _bookService) {
                     this._routeParams = _routeParams;
                     this._router = _router;
+                    this._bookService = _bookService;
                     this.searchResults = [];
                     this.sortBy = "Name";
                 }
-                // TODO 3. Fill `search` and `sortBy` from URL
-                // TODO 4. Call BookService and fill in results
+                SearchComponent.prototype.ngOnInit = function () {
+                    // TODO 3. Fill `search` and `sortBy` from URL
+                    // TODO 4. Call BookService and fill in results
+                };
                 SearchComponent.prototype.addBook = function (id) {
                     // TODO 5. Call BookService and add requested book to user's collection
                 };
@@ -38,9 +44,10 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                         styles: ["\n    ul li { margin-bottom: 1em; }\n    "],
                         templateUrl: 'scripts/app/search.component.html'
                     }), 
-                    __metadata('design:paramtypes', [router_1.RouteParams, router_1.Router])
+                    __metadata('design:paramtypes', [router_1.RouteParams, router_1.Router, (typeof (_a = typeof book_service_1.BookService !== 'undefined' && book_service_1.BookService) === 'function' && _a) || Object])
                 ], SearchComponent);
                 return SearchComponent;
+                var _a;
             }());
             exports_1("SearchComponent", SearchComponent);
         }

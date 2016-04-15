@@ -1,4 +1,4 @@
-System.register(['angular2/core', "angular2/router", 'angular2/http', './booklist.component', './search.component'], function(exports_1, context_1) {
+System.register(['angular2/core', "angular2/router", 'angular2/http', './booklist.component', './search.component', './book.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "angular2/router", 'angular2/http', './booklis
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, http_1, booklist_component_1, search_component_1;
+    var core_1, router_1, http_1, booklist_component_1, search_component_1, book_service_1;
     var AppComponent;
     return {
         setters:[
@@ -28,10 +28,14 @@ System.register(['angular2/core', "angular2/router", 'angular2/http', './booklis
             },
             function (search_component_1_1) {
                 search_component_1 = search_component_1_1;
+            },
+            function (book_service_1_1) {
+                book_service_1 = book_service_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent() {
+                function AppComponent(_bookService) {
+                    this._bookService = _bookService;
                 }
                 // TODO 2. Capture `searchQuery` from form input    
                 // and then navigate to search results
@@ -41,7 +45,7 @@ System.register(['angular2/core', "angular2/router", 'angular2/http', './booklis
                     core_1.Component({
                         selector: 'my-app',
                         directives: [router_1.ROUTER_DIRECTIVES],
-                        providers: [router_1.ROUTER_PROVIDERS, http_1.HTTP_PROVIDERS],
+                        providers: [book_service_1.BookService, router_1.ROUTER_PROVIDERS, http_1.HTTP_PROVIDERS],
                         styleUrls: ['scripts/app/app.component.css'],
                         templateUrl: 'scripts/app/app.component.html'
                     }),
@@ -58,9 +62,10 @@ System.register(['angular2/core', "angular2/router", 'angular2/http', './booklis
                             component: search_component_1.SearchComponent
                         }
                     ]), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [(typeof (_a = typeof book_service_1.BookService !== 'undefined' && book_service_1.BookService) === 'function' && _a) || Object])
                 ], AppComponent);
                 return AppComponent;
+                var _a;
             }());
             exports_1("AppComponent", AppComponent);
         }

@@ -154,7 +154,9 @@
     <Content Include="Scripts\app\main.js" />
     <Content Include="Scripts\app\search.component.html" />
     <Content Include="Scripts\app\search.component.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -171,6 +173,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\app\app.component.ts" />
+    <TypeScriptCompile Include="Scripts\app\book.service.ts" />
     <TypeScriptCompile Include="Scripts\app\booklist.component.ts" />
     <TypeScriptCompile Include="Scripts\app\main.ts" />
     <TypeScriptCompile Include="Scripts\app\search.component.ts" />
