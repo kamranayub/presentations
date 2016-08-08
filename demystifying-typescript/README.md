@@ -1,10 +1,10 @@
 # TypeScript Demystified
-by Kamran Ayub
+by [Kamran Ayub](http://kamranicus.com)
 
 Learn about 5 common misconceptions about TypeScript and decide for yourself.
 
-- [View web version](http://kamranicus.com/presentations/demystifying-typescript/#/) (Oct, 2015)
-- [View on YouTube](https://www.youtube.com/watch?v=kb7tvaBJeMs) (Sep, 2014)
+- [View web version](http://kamranicus.com/presentations/demystifying-typescript/#/) (Aug 2016)
+- [View on YouTube](https://www.youtube.com/watch?v=kb7tvaBJeMs) (Sep, 2014) (TODO Add Midwest.js video when available)
 
 ## Recommended Editors:
 
@@ -21,6 +21,9 @@ Learn about 5 common misconceptions about TypeScript and decide for yourself.
 
 Presentation built with [reveal.js](http://lab.hakim.se/reveal-js/#/)
 
-Given at Minnesota Developer Conference 2014, 
-Twin Cities Code Camp 17, and 
-Twin Cities Code Camp 19.
+Given publicly at:
+
+- Midwest.js (Aug 2016)
+- Twin Cities Code Camp 19 (Oct 2015)
+- Twin Cities Code Camp 17 (Oct 2014)
+- Minnesota Developer Conference (Sep 2014)

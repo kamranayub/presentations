@@ -1,3 +1,6 @@
 [submodule "typescript-in-action/reveal.js"]
 	path = typescript-in-action/reveal.js
 	url = https://github.com/hakimel/reveal.js.git
+[submodule "demystifying-typescript/reveal.js"]
+	path = demystifying-typescript/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
