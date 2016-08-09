@@ -124,6 +124,10 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 							<li class="fragment">There is no overhead because TypeScript is not a runtime</li>
 						</ul>
 					</section>
+					
+					<section>
+						<h1>Quick Example</h1>
+					</section>
 
 					<section>
 						<h2>Declaration Files</h2>
@@ -133,16 +137,12 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 					</section>
 
 					<section>
-						<h1>Quick Example</h1>
-					</section>
-
-					<section>
 						<h2>Myth #1</h2>
 						<blockquote>
 							&ldquo;TypeScript is not interoperable with JavaScript&rdquo;
 						</blockquote>
 						<p>&nbsp;</p>
-						<p class="fragment">TypeScript is a <em>typed superset</em> of JavaScript that compiles down to plain idiomatic JavaScript</p>
+						<p class="fragment">TypeScript is a <em>typed superset</em> of JavaScript that compiles down to plain, human-readable JavaScript</p>
 					</section>
 				</section>
 
@@ -169,7 +169,7 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 						<h2>Perspective</h2>
 
 						<ul>
-							<li class="fragment">TypeScript brings ES2015 to you now</li>
+							<li class="fragment">TypeScript brings ES2015 &amp; ES2016 to you now</li>
 							<li class="fragment">You will probably learn the new syntax <em>anyway</em></li>
 							<li class="fragment">There are only <s>a few</s> a handful of new things to learn</li>
 							<li class="fragment">TypeScript can target different versions of ECMAScript</li>
@@ -182,9 +182,9 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 
 						<p>Classes, arrow functions, let/const, default parameters, rest parameters, string interpolation, for..of, symbols</p>
 
-						<h3>TypeScript layers on:</h3>
+						<h3 class="fragment" data-animate="fadeInUp">TypeScript layers on:</h3>
 
-						<p>Interfaces, enums, namespaces, optional parameters, overload functions, abstract classes, class member accessibility/visibility, static typing, generics, union types, type guards, intersection types, type aliasing</p>
+						<p class="fragment" data-animate="fadeInUp">Interfaces, enums, namespaces, optional parameters, overload functions, abstract classes, class member accessibility/visibility, static typing, generics, union types, type guards, intersection types, type aliasing</p>
 					</section>
 
 					<section>
@@ -256,7 +256,7 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 						<h2>Cross-Platform First-Class Experience</h2>
 
 						<p><a href="https://code.visualstudio.com/docs">Visual Studio Code</a></p>
-						<p>Cross-platform on Linux, Mac, and Windows. Full TypeScript (w/Chrome &amp; Node.js debugging) support plus more.</p>
+						<p>Cross-platform on Linux, Mac, and Windows. Full TypeScript (w/Chrome &amp; Node.js debugging) support plus tons more.</p>
                         <p><a href="https://code.visualstudio.com/updates">Monthly release cycle</a></p>
 					</section>
 
@@ -296,14 +296,14 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 
 					<section>	
 						<h2>Consider the following</h2>
-						<blockquote>
-							&ldquo;Well, everything looks okay, let's run this&rdquo;
+						<blockquote class="fragment" data-animate="fadeInUp">
+							&ldquo;Alright, just saved my script, let's run it!&rdquo;
 						</blockquote>
-						<blockquote>
-							<code>TypeError: undefined is not a function</code>
+						<blockquote class="fragment" data-animate="shake">
+							<code style="color: red">TypeError: undefined is not a function</code>
 						</blockquote>
-						<blockquote>
-							&ldquo;**** ***ing ****!!!!&rdquo;
+						<blockquote class="fragment" data-animate="bounceIn" style="font-size: 3em">
+							<code>(╯°□°)╯︵ ┻━┻</code>
 						</blockquote>						
 						<p>&nbsp;</p>
 						<h2 class="fragment">Sound Familiar?</h2>
@@ -312,12 +312,15 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 					<section>	
 						<h2>How about this?</h2>
 
-						<blockquote>
-							&ldquo;We need to change one of the parts of this app&rdquo;
+						<blockquote class="fragment" data-animate="fadeInUp">
+							&ldquo;We should refactor one of the parts of this app!&rdquo;
 						</blockquote>
-						<blockquote>
-							&ldquo;Ready the sacrificial offerings and speak the incantations so the JavaScript Refactor Gods will have mercy on our souls&rdquo;
-						</blockquote>	
+						
+						<img class="fragment" src="img/nope.gif">
+					</section>
+
+					<section data-background-image="img/thisisfine.jpg">
+						
 					</section>
 
 					<section>
@@ -336,11 +339,11 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 
 						<p>TypeScript...</p>
                         <ul>
-                            <li>eliminates an entire class of errors</li>
-                            <li>allows richer developer tooling (<strong>Intellisense!</strong>)</li>
-                            <li>makes your codebase leaner and easier to refactor</li>
-                            <li>is opt-in&mdash;use as much or as little as you want</li>
-                            <li>is pretty easy to learn</li>
+                            <li class="fragment">eliminates an entire class of errors</li>
+                            <li class="fragment">allows richer developer tooling (<strong>Intellisense!</strong>)</li>
+                            <li class="fragment">makes your codebase leaner and easier to refactor</li>
+                            <li class="fragment">is opt-in&mdash;use as much or as little as you want</li>
+                            <li class="fragment">is pretty easy to learn</li>
                         </ul>
 						<br/><br/>
 						<h4 class="fragment">If you are used to strongly-typed languages, <br/>you'll feel right at home</h4>
@@ -379,13 +382,13 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 					</section>
 
 					<section>
-						<h1>NOPE<span class="fragment">*</span></h1>
+						<h1>NOPE<span class="fragment" data-animate="pulse">*</span></h1>
 					</section>
 
 					<section>
 						<h2>CoffeeScript</h2>
 
-						<pre class="fragment"><code data-trim class="coffeescript">
+						<pre class="fragment" data-animate="fadeInUp"><code data-trim class="coffeescript">
 class Point
   constructor(@x, @y) ->
 
@@ -406,7 +409,7 @@ class Point
 					<section>
 						<h2>Dart</h2>
 
-						<pre class="fragment"><code data-trim class="dart">
+						<pre class="fragment" data-animate="fadeInUp"><code data-trim class="dart">
 import 'dart:math';
 
 class Point {
@@ -447,7 +450,7 @@ class Point {
 					<section>
 						<h2>TypeScript</h2>
 
-						<pre class="fragment"><code data-trim class="typescript">
+						<pre class="fragment" data-animate="fadeInUp"><code data-trim class="typescript">
 class Point {
   constructor(public x: number, public y: number) {
 
@@ -486,7 +489,7 @@ class Point {
 						<h1>Practical Use Cases</h1>
 					</section>
 
-					<section data-background="img/hexshaper.png">
+					<section data-background-video="img/hexshaper-opaque.mp4" data-background-color="#000">
 						<h2 class="text-secondary">Games</h2>
 
 						<p>I've used TypeScript for over three years now in my own game(s) and apps</p>
