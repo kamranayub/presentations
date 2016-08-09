@@ -9,7 +9,7 @@ var Point = (function () {
             Math.pow(this.y - other.y, 2));
     };
     return Point;
-})();
+}());
 var p1 = new Point(5, 6);
 var p2 = new Point(1, 1);
 console.log("Distance between", p1, p2, "is", p1.distance(p2));

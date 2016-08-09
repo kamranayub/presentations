@@ -15,7 +15,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="reveal.js/css/reveal.css">
-		<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+		<link rel="stylesheet" href="css/custom.css" id="theme">
+		<link rel="stylesheet" href="css/animate.css">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
@@ -43,32 +44,38 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
+					<img src="img/divider.png" class="plain">
 					<h1>Demystifying TypeScript</h1>
-                    <h2 style="color: #E8B82A"><small>2016 Edition</small></h2>
-					<h3>5 Common Myths Debunked</h3>
+					<img src="img/divider-f.png" class="plain">
+					<h3 class="text-secondary">5 Common Myths Debunked</h3>
 					<p>
-						<small>Created by <a href="http://kamranicus.com">Kamran Ayub</a> / <a href="http://twitter.com/kamranayub">@kamranayub</a></small>
+						<small>by <a href="http://kamranicus.com">Kamran Ayub</a> / <a href="http://twitter.com/kamranayub">@kamranayub</a></small>
 					</p>
+					<h2 class="banner">2016 Edition</h2>					
 				</section>
 
 				<section>
-					<h2>About Me</h2>
-					<img src="img/yes_man.jpg">
-					<p>
-						I work at General Mills as an application developer, I maintain some open source projects,
-						and I like to play <a href="http://keeptrackofmygames.com/user/kamranicus">video games</a>
-					</p>		
-					<p><a href="http://github.com/kamranayub">github.com/kamranayub</a></p>			
+                    <h1>Hi!</h1>
+                    <img src="img/me.jpg" width="300">
+                    <p class="fragment"><small>Yes, that's me with a monkey...</small></p>
+                </section>
+				
+				<section>
+					<img src="img/gmi.png" width="500">
+				</section>
+				
+				<section>
+					<img src="img/gh.png">
 				</section>
 
 				<section>
-					<h3 class="fragment">Fact</h3>
-					<h1 class="fragment">Writing large JavaScript applications is hard</h1>
+					<h3 class="fragment" data-animate="fadeInDown">Fact</h3>
+					<h1 class="fragment text-secondary" data-animate="bounceIn">Writing large JavaScript applications is hard</h1>
 				</section>
 
 				<section>
 					<h1>The Mystical TypeScript</h1>
-					<h3 class="fragment">Demystified</h3>
+					<h3 class="fragment text-secondary" data-animate="tada">Demystified</h3>
 				</section>
 
 
@@ -103,11 +110,11 @@ var p2 = new Point(1, 1);
 // Calculate distance between two points
 console.log("Distance between", p1, p2, "is", p1.distance(p2));
 						</code></pre>
-						<p class="fragment">It's JavaScript!</p>
-						<p class="fragment">And it's TypeScript!</p>
+						<p class="fragment" data-animate="tada">It's JavaScript!</p>
+						<p class="fragment" data-animate="fadeInUp">And it's TypeScript!</p>
 					</section>
 					<section>
-						<h1>All valid JavaScript is valid TypeScript</h1>
+						<h1 class="animated flash infinite text-highlight slower">All valid JavaScript is valid TypeScript</h1>
 					</section>
 					<section>
 						<h2>Facts</h2>
@@ -162,11 +169,22 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 						<h2>Perspective</h2>
 
 						<ul>
-							<li class="fragment">TypeScript brings ECMAScript 6 to you now</li>
-							<li class="fragment">You will need to learn the new syntax <em>anyway</em></li>
+							<li class="fragment">TypeScript brings ES2015 to you now</li>
+							<li class="fragment">You will probably learn the new syntax <em>anyway</em></li>
 							<li class="fragment">There are only <s>a few</s> a handful of new things to learn</li>
 							<li class="fragment">TypeScript can target different versions of ECMAScript</li>
+							<li class="fragment">TypeScript is forward-compatible</li>
 						</ul>
+					</section>
+
+					<section>
+						<h3>TypeScript &amp; ES2015 Share:</h3>
+
+						<p>Classes, arrow functions, let/const, default parameters, rest parameters, string interpolation, for..of, symbols</p>
+
+						<h3>TypeScript layers on:</h3>
+
+						<p>Interfaces, enums, namespaces, optional parameters, overload functions, abstract classes, class member accessibility/visibility, static typing, generics, union types, type guards, intersection types, type aliasing</p>
 					</section>
 
 					<section>
@@ -190,11 +208,7 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 					<section>
 						<h2>And there's more!</h2>
 
-						<p>Classes, generics and static typing are only a few examples</p>
-						<p><small>for..of, generators, async, type guards, decorators, computed properties, 
-                            string templates, union types, type aliases, intersection types, JSX (React) support, abstract/private/protected, 
-                            Rest (...args), default parameters, overloading, fat arrow, interfaces, 
-                            AMD/CommonJS modules, let, const, etc.</small></p>
+						<p><a href="http://www.typescriptlang.org/docs/handbook/basic-types.html">TypeScript Handbook</a></p>
 						<p><a href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript">TypeScript Release Notes</a></p>
 					</section>
 
@@ -204,7 +218,8 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 							&ldquo;I have to learn a whole new language&rdquo;
 						</blockquote>
 						<p>&nbsp;</p>
-						<p class="fragment">Existing experience transfers directly. Much of the syntax and features are borrowed straight from ECMAScript 6</p>
+						<p class="fragment">Existing experience transfers directly. 
+							Much of the syntax and features are designed to be forward-compatible with ES2015 and ES2016 while maintaining maximum backwards-compatibility.</p>
 					</section>
 				</section>
 
@@ -241,19 +256,15 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 						<h2>Cross-Platform First-Class Experience</h2>
 
 						<p><a href="https://code.visualstudio.com/docs">Visual Studio Code</a></p>
-						<p>Cross-platform on Linux, Mac, and Windows. Full TypeScript (and Node.js debugging) support plus more.</p>
+						<p>Cross-platform on Linux, Mac, and Windows. Full TypeScript (w/Chrome &amp; Node.js debugging) support plus more.</p>
                         <p><a href="https://code.visualstudio.com/updates">Monthly release cycle</a></p>
 					</section>
 
 					<section>
 						<h2>And there's more...</h2>
 
-						<ul>
-							<li class="fragment">Sublime has a TypeScript plugin</li>
-							<li class="fragment">You can create your own compile step in Grunt or Gulp</li>
-							<li class="fragment">You can <code>`npm install -g typescript`</code> on any platform</li>
-							<li class="fragment">WebStorm is also a great IDE for every platform: <a href="http://jetbrains.com/webstorm/">jetbrains.com/webstorm/</a></li>
-						</ul>
+						<img src="img/platforms.png">
+						<p><a href="http://www.typescriptlang.org/#download-links">Download for your platform and editor of choice</a></p>
 					</section>
                     
                     <section>
@@ -317,19 +328,22 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 						<h2>The sad truth</h2>
 
 						<p>Not everyone writes JavaScript unit tests</p>
+						<small class="fragment slower" data-animate="shake"><em>(including yours truly)</em></small>
 					</section>
 
 					<section>
-						<h2>And even if you have tests</h2>
+						<h2>Even if you have tests</h2>
 
 						<p>TypeScript...</p>
                         <ul>
                             <li>eliminates an entire class of errors</li>
                             <li>allows richer developer tooling (<strong>Intellisense!</strong>)</li>
-                            <li>makes your codebase leaner</li>
-                            <li>is flexible&mdash;use as much or as little as you want</li>
+                            <li>makes your codebase leaner and easier to refactor</li>
+                            <li>is opt-in&mdash;use as much or as little as you want</li>
                             <li>is pretty easy to learn</li>
                         </ul>
+						<br/><br/>
+						<h4 class="fragment">If you are used to strongly-typed languages, <br/>you'll feel right at home</h4>
 					</section>
 
 					<section>
@@ -345,8 +359,10 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 						</blockquote>
 						<p>&nbsp;</p>
 						<p class="fragment">
-							TypeScript can catch easily overlooked errors and reduces risk of runtime errors
+							TypeScript is refactor-friendly, can catch easily overlooked errors, reduces risk of runtime errors,
+							and allows you to reason about your codebase better
 						</p>
+						<p class="fragment text-secondary">You should still totally write tests, though</p>
 					</section>
 				</section>
 
@@ -354,7 +370,7 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 					<section>
 						<h2>Myth #5</h2>
 						<blockquote>
-							&ldquo;TypeScript is like CoffeeScript or Dart&rdquo;
+							&ldquo;TypeScript is like CoffeeScript or Dart or Babel, etc.&rdquo;
 						</blockquote>
 						<p class="fragment">AKA</p>
 						<blockquote class="fragment">
@@ -380,9 +396,10 @@ class Point
 						</code></pre>
 
 						<ul>
-							<li class="fragment">Inspired by Ruby &amp; Python</li>
-							<li class="fragment">Is not statically typed</li>
-							<li class="fragment">Is more of a "macro" or expansion language</li>
+							<li class="fragment">Is a separate language that compiles into JavaScript</li>
+							<li class="fragment">Inspired by Ruby &amp; Python (ft. significant whitespace)</li>
+							<li class="fragment">Does not feature static typing</li>
+							<li class="fragment">Is more of a "macro" or expansion or syntactic-sugar language</li>
 						</ul>
 					</section>
 
@@ -407,11 +424,24 @@ class Point {
 						</code></pre>
 
 						<ul>
+							<li class="fragment">Full on SDK/framework and language</li>
 							<li class="fragment">Supports static types</li>
 							<li class="fragment">Compiles into non-idiomatic JavaScript</li>
-                            <li class="fragment">Can run in a Dartium VM (extra perf)</li>
-							<li class="fragment">Full on SDK/framework and language</li>
+                            <li class="fragment">Can run in a Dartium VM (extra perf)</li>							
 						</ul>
+					</section>
+
+					<section>
+						<h2>Babel.js</h2>
+
+						<ul>
+							<li class="fragment">Is not a language or framework, it's a compiler</li>
+							<li class="fragment">Compiles ES2015 to ES5 backwards-compatibility</li>
+							<li class="fragment">Supports extensible polyfill system</li>	
+							<li class="fragment">Is not necessarily mutually exclusive from TS</li>						
+						</ul>
+
+						<p class="fragment text-secondary">You should definitely consider using it if you aren't going to use TypeScript</p>
 					</section>
 
 					<section>
@@ -434,19 +464,20 @@ class Point {
 
 						<ul>
 							<li class="fragment">Good middle-ground, outputs idiomatic JavaScript</li>
-							<li class="fragment">Looks more like (and will target) ECMAScript 6</li>
-                            <li class="fragment">Rich editor tooling</li>
-							<li class="fragment">Simpler than Dart, "It's just JavaScript!&trade;"</li>
+							<li class="fragment">Adds static typing, friendly to Java/C-based language devs</li>
+							<li class="fragment">Forwards-compatible syntax with ES2015, ES2016, etc.</li>
+                            <li class="fragment">Rich editor tooling &amp; intellisense</li>
+							<li class="fragment">Simpler, "It's just JavaScript!&trade;"</li>
 						</ul>					
 					</section>
 
 					<section>
 						<h2>Myth #5</h2>
 						<blockquote>
-							&ldquo;TypeScript is like CoffeeScript or Dart&rdquo;
+							&ldquo;TypeScript is like CoffeeScript or Dart or Babel.js&rdquo;
 						</blockquote>
 						<p>&nbsp;</p>
-						<p class="fragment">There are <strong>huge</strong> differences between these languages</p>
+						<p class="fragment">There are <strong>huge</strong> fundamental differences between these languages/frameworks/tools</p>
 					</section>
 				</section>
 
@@ -455,20 +486,21 @@ class Point {
 						<h1>Practical Use Cases</h1>
 					</section>
 
-					<section data-background="img/minotaur.jpg">
-						<h2>Games</h2>
+					<section data-background="img/hexshaper.png">
+						<h2 class="text-secondary">Games</h2>
 
-						<p>I've used TypeScript for over two years now in my own game(s)</p>
+						<p>I've used TypeScript for over three years now in my own game(s) and apps</p>
 						<p>Enforces a good structure and organization of my code</p>
-						<p><a href="https://github.com/excaliburjs/Ludum-33">github.com/excaliburjs/Ludum-33</a></p>
-                        <p><a href="https://github.com/excaliburjs/Ludum-31">github.com/excaliburjs/Ludum-31</a></p>
-                        <p><a href="https://github.com/excaliburjs/Ludum-29">github.com/excaliburjs/Ludum-29</a></p>
+						<p><a href="https://github.com/excaliburjs/ludum-35">github.com/excaliburjs/ludum-35</a>
+						<p><a href="https://github.com/excaliburjs/Ludum-33">github.com/excaliburjs/ludum-33</a></p>
+                        <p><a href="https://github.com/excaliburjs/Ludum-31">github.com/excaliburjs/ludum-31</a></p>
+                        <p><a href="https://github.com/excaliburjs/Ludum-29">github.com/excaliburjs/ludum-29</a></p>
 					</section>	
 
 					<section data-background="img/excalibur.jpg">
-						<h2>Libraries</h2>
+						<h2 class="text-secondary">Libraries</h2>
 
-                        <p>Angular 2 is adopting TypeScript</p>
+                        <p><a href="https://github.com/angular/angular">Angular 2</a> is written in TypeScript</p>
 						<p>Provides type-safe API and <a href="http://excaliburjs.com/docs/api/edge/modules/ex.html">type-rich</a> documentation</p>
 						<p>Provides structure and organization to your framework</p>
 						<p>Great for OSS projects where others can contribute</p>
@@ -476,11 +508,11 @@ class Point {
 					</section>
 
 					<section data-background="img/monaco.jpg">
-						<h2>Large Applications</h2>
+						<h2 class="text-secondary">Large Applications</h2>
 
-						<p><a href="http://code.visualstudio.com">Visual Studio Code</a> is written in TypeScript</p>
+						<p><a href="https://github.com/Microsoft/vscode">Visual Studio Code</a> is written in TypeScript</p>
                         <p>The Microsoft <a href="http://portal.azure.com">Azure Blade UI (portal)</a> is written in TypeScript</p>
-                        <p><a href="https://angular.io/docs/ts/latest/quickstart.html">Angular 2</a> apps should be using TypeScript</p>                        						
+                        <p><a href="https://angular.io/docs/ts/latest/quickstart.html">Angular 2</a> apps are using TypeScript</p>                        						
 					</section>
 				</section>
                 
@@ -492,8 +524,8 @@ class Point {
 				
 				<section>
 					<h1>Thank you</h1>
-					<h2>Rate at <a href="http://speakr.cc">speakr.cc</a></h2>
-					<p>@kamranayub - <a href="http://kamranicus.com">kamranicus.com</a></p>
+					<p>@kamranayub / <a href="http://kamranicus.com">kamranicus.com</a></p>
+					<p class="credits"><strong>Credits: <a href='http://www.freepik.com/free-vector/decorative-dividers-collection_790000.htm'>Title border designed by Freepik</a></p>
 				</section>
 			</div>
 
@@ -528,6 +560,30 @@ class Point {
 					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
+			});
+
+			// Animate.css integration
+			// I LIKE ANIMATIONS
+			Reveal.addEventListener('fragmentshown', function( event ) {
+				var f = event.fragment; // the fragment DOM element
+
+				// base animate.css class
+				f.classList.add('animated');
+
+				// pull animation class
+				var ac = f.getAttribute('data-animate');
+				f.classList.add(ac);
+			});
+
+			Reveal.addEventListener('fragmenthidden', function( event ) {
+				var f = event.fragment; // the fragment DOM element
+
+				// base animate.css class
+				f.classList.remove('animated');
+
+				// pull animation class
+				var ac = f.getAttribute('data-animate');
+				f.classList.remove(ac);
 			});
 
 		</script>
