@@ -125,17 +125,20 @@ body {
   text-shadow: none;
   word-wrap: break-word; }
 
-.reveal h1 {
+.reveal h1, .reveal .h1 {
   font-size: 3em; }
 
-.reveal h2 {
+.reveal h2, .reveal .h2 {
   font-size: 2.11em; }
 
-.reveal h3 {
+.reveal h3, .reveal .h3 {
   font-size: 1.55em; }
 
-.reveal h4 {
+.reveal h4, .reveal .h4 {
   font-size: 1em; }
+
+.reveal h5, .reveal .h5 {
+  font-size: 0.8em; }
 
 .reveal h1 {
   text-shadow: none; }

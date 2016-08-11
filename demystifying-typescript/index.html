@@ -377,7 +377,7 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 					<section>
 						<h2>Myth #5</h2>
 						<blockquote>
-							&ldquo;TypeScript is like CoffeeScript or Dart or Babel, etc.&rdquo;
+							&ldquo;TypeScript is like CoffeeScript or Dart or Babel, or Flow, etc.&rdquo;
 						</blockquote>
 						<p class="fragment">AKA</p>
 						<blockquote class="fragment">
@@ -386,7 +386,7 @@ console.log("Distance between", p1, p2, "is", p1.distance(p2));
 					</section>
 
 					<section>
-						<h1>NOPE<span class="fragment" data-animate="pulse">*</span></h1>
+						<h1>MAYBE?<span class="fragment" data-animate="pulse">*</span></h1>
 					</section>
 
 					<section>
@@ -406,7 +406,7 @@ class Point
 							<li class="fragment">Is a separate language that compiles into JavaScript</li>
 							<li class="fragment">Inspired by Ruby &amp; Python (ft. significant whitespace)</li>
 							<li class="fragment">Does not feature static typing</li>
-							<li class="fragment">Is more of a "macro" or expansion or syntactic-sugar language</li>
+							<li class="fragment">Is more of a "macro" or expansion w/syntactic-sugar language</li>
 						</ul>
 					</section>
 
@@ -452,6 +452,40 @@ class Point {
 					</section>
 
 					<section>
+						<h2>Flow</h2>
+
+						<pre class="fragment" data-animate="fadeInUp"><code data-trim class="javascript">
+/* @flow */
+
+class Point {
+	x: number;
+	y: number;
+
+	constructor(x: number, y: number) {
+		this.x = x;
+		this.y = y;
+	}
+
+	distance(p: Point) {
+		var dx = this.x - p.x;
+		var dy = this.y - p.y;
+
+		return Math.sqrt(dx * dx + dy * dy);
+	}
+}
+						</code></pre>	
+
+						<ul>
+							<li class="fragment">Is <em>eerily</em> similar to TypeScript (checker vs. compiler)</li>
+							<li class="fragment">Has nullable types (<a href="https://github.com/Microsoft/TypeScript/pull/7140">TS 2.0?</a>)</li>
+							<li class="fragment">Doesn't have visibility/accessibility modifiers</li>
+							<li class="fragment">Can use <code>babel.js</code> to transpile to vanilla JS vs. integrated tooling</li>						
+						</ul>
+
+						<p class="fragment text-secondary">This is the closest to TypeScript you can get</p>
+					</section>
+
+					<section>
 						<h2>TypeScript</h2>
 
 						<pre class="fragment" data-animate="fadeInUp"><code data-trim class="typescript">
@@ -481,10 +515,10 @@ class Point {
 					<section>
 						<h2>Myth #5</h2>
 						<blockquote>
-							&ldquo;TypeScript is like CoffeeScript or Dart or Babel.js&rdquo;
+							&ldquo;TypeScript is like CoffeeScript or Dart or Babel.js or Flow&rdquo;
 						</blockquote>
 						<p>&nbsp;</p>
-						<p class="fragment">There are <strong>huge</strong> fundamental differences between these languages/frameworks/tools</p>
+						<p class="fragment">There are <strong>huge</strong> fundamental differences between these languages/frameworks/tools (but Flow is really damn close)</p>
 					</section>
 				</section>
 
@@ -497,7 +531,7 @@ class Point {
 						<h2 class="text-secondary">Games</h2>
 
 						<p>I've used TypeScript for over three years now in my own game(s) and apps</p>
-						<p>Enforces a good structure and organization of my code</p>
+						<p>Assists in maintaining good structure and organization of our code</p>
 						<p><a href="https://github.com/excaliburjs/ludum-35">github.com/excaliburjs/ludum-35</a>
 						<p><a href="https://github.com/excaliburjs/Ludum-33">github.com/excaliburjs/ludum-33</a></p>
                         <p><a href="https://github.com/excaliburjs/Ludum-31">github.com/excaliburjs/ludum-31</a></p>
@@ -507,6 +541,7 @@ class Point {
 					<section data-background="img/excalibur.jpg">
 						<h2 class="text-secondary">Libraries</h2>
 
+						<p><a href="https://github.com/excaliburjs/Excalibur">Excalibur.js</a> (the engine I work on) is written in TypeScript</p>
                         <p><a href="https://github.com/angular/angular">Angular 2</a> is written in TypeScript</p>
 						<p>Provides type-safe API and <a href="http://excaliburjs.com/docs/api/edge/modules/ex.html">type-rich</a> documentation</p>
 						<p>Provides structure and organization to your framework</p>
@@ -519,7 +554,8 @@ class Point {
 
 						<p><a href="https://github.com/Microsoft/vscode">Visual Studio Code</a> is written in TypeScript</p>
                         <p>The Microsoft <a href="http://portal.azure.com">Azure Blade UI (portal)</a> is written in TypeScript</p>
-                        <p><a href="https://angular.io/docs/ts/latest/quickstart.html">Angular 2</a> apps are using TypeScript</p>                        						
+                        <p><a href="https://angular.io/docs/ts/latest/quickstart.html">Angular 2</a> apps are using TypeScript</p>    
+						<p>Great fit for "enterprisey" apps and projects with rotating team members</p>                    						
 					</section>
 				</section>
                 
@@ -532,6 +568,13 @@ class Point {
 				<section>
 					<h1>Thank you</h1>
 					<p>@kamranayub / <a href="http://kamranicus.com">kamranicus.com</a></p>
+
+					<h4>For your perusal</h4>
+
+					<p class="h5">Watch my <a href="https://www.youtube.com/watch?v=eeh-FcC6Sew">TypeScript in Action</a> Talk</p>
+					<p class="h5">Read some thoughts on <a href="http://danluu.com/empirical-pl/">whether static type checking actually helps</a></p>
+					<p class="h5">Go through <a href="https://djcordhose.github.io/flow-vs-typescript/2016_hhjs.html#/">Flow vs. TypeScript</a> by Oliver Zeigermann</p>
+
 					<p class="credits"><strong>Credits: <a href='http://www.freepik.com/free-vector/decorative-dividers-collection_790000.htm'>Title border designed by Freepik</a></p>
 				</section>
 			</div>
