@@ -2,6 +2,22 @@
 import {Router, RouteParams} from 'angular2/router'
 
 import {BookService} from './book.service'
+import {SearchResult} from './SearchResult'
+
+/**
+ * Search RouteParams
+ */
+interface SearchRouteParams {
+    query?: string;
+    sortBy?: string;
+}
+
+/**
+ * Strongly-typed version of RouteParams. Extends Angular declaration.
+ */
+interface RouteParamsOf<T> extends RouteParams {
+    get(param: keyof T): string;
+}
 
 @Component({
     styles: [`
@@ -12,13 +28,13 @@ import {BookService} from './book.service'
 export class SearchComponent implements OnInit {
     public query: string;
 
-    public searchResults: any[] = [];
+    public searchResults: SearchResult[] = [];
 
     public sortBy: SortBy = "Name";
 
     constructor(
         private _bookService: BookService,
-        private _routeParams: RouteParams,
+        private _routeParams: RouteParamsOf<SearchRouteParams>,
         private _router: Router) {
         
     }

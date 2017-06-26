@@ -1,6 +1,5 @@
-System.register(['angular2/core', 'angular2/router', './book.service'], function(exports_1, context_1) {
+System.register(["angular2/core", "angular2/router", "./book.service"], function (exports_1, context_1) {
     "use strict";
-    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,10 +9,10 @@ System.register(['angular2/core', 'angular2/router', './book.service'], function
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, book_service_1;
-    var SearchComponent;
+    var __moduleName = context_1 && context_1.id;
+    var core_1, router_1, book_service_1, SearchComponent;
     return {
-        setters:[
+        setters: [
             function (core_1_1) {
                 core_1 = core_1_1;
             },
@@ -22,8 +21,9 @@ System.register(['angular2/core', 'angular2/router', './book.service'], function
             },
             function (book_service_1_1) {
                 book_service_1 = book_service_1_1;
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {
             SearchComponent = (function () {
                 function SearchComponent(_bookService, _routeParams, _router) {
                     this._bookService = _bookService;
@@ -49,17 +49,17 @@ System.register(['angular2/core', 'angular2/router', './book.service'], function
                         _this._router.navigate(['Books']);
                     });
                 };
-                SearchComponent = __decorate([
-                    core_1.Component({
-                        styles: ["\n    ul li { margin-bottom: 1em; }\n    "],
-                        templateUrl: 'scripts/app/search.component.html'
-                    }), 
-                    __metadata('design:paramtypes', [book_service_1.BookService, router_1.RouteParams, router_1.Router])
-                ], SearchComponent);
                 return SearchComponent;
             }());
+            SearchComponent = __decorate([
+                core_1.Component({
+                    styles: ["\n    ul li { margin-bottom: 1em; }\n    "],
+                    templateUrl: 'scripts/app/search.component.html'
+                }),
+                __metadata("design:paramtypes", [book_service_1.BookService, Object, router_1.Router])
+            ], SearchComponent);
             exports_1("SearchComponent", SearchComponent);
         }
-    }
+    };
 });
 //# sourceMappingURL=search.component.js.map

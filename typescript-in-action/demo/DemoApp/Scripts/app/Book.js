@@ -1,6 +1,5 @@
-System.register(['./Decorators'], function(exports_1, context_1) {
+System.register(["./Decorators"], function (exports_1, context_1) {
     "use strict";
-    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,14 +9,15 @@ System.register(['./Decorators'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var Decorators_1;
-    var Book;
+    var __moduleName = context_1 && context_1.id;
+    var Decorators_1, Book;
     return {
-        setters:[
+        setters: [
             function (Decorators_1_1) {
                 Decorators_1 = Decorators_1_1;
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {
             Book = (function () {
                 function Book() {
                     this._id = 0;
@@ -73,14 +73,15 @@ System.register(['./Decorators'], function(exports_1, context_1) {
                     o.lists = model.lists;
                     return o;
                 };
-                __decorate([
-                    Decorators_1.DateStringConverter, 
-                    __metadata('design:type', Date)
-                ], Book.prototype, "added", null);
                 return Book;
             }());
+            __decorate([
+                Decorators_1.DateStringConverter,
+                __metadata("design:type", Date),
+                __metadata("design:paramtypes", [Date])
+            ], Book.prototype, "added", null);
             exports_1("Book", Book);
         }
-    }
+    };
 });
 //# sourceMappingURL=Book.js.map
