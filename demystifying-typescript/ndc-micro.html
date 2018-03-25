@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Demystifying TypeScript (Micro)</title>
+
+		<meta name="description" content="Presentation for TypeScript">
+		<meta name="author" content="Kamran Ayub">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="css/custom.css" id="theme">
+		<link rel="stylesheet" href="css/animate.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'reveal.js/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<img src="img/divider.png" class="plain">
+					<h1>Demystifying TypeScript</h1>
+					<img src="img/divider-f.png" class="plain">
+					<h3 class="text-secondary">5 Common Myths Debunked</h3>
+					<p>
+						<small>by <a href="http://kamranicus.com">Kamran Ayub</a> / <a href="http://twitter.com/kamranayub">@kamranayub</a></small>
+					</p>
+					<h2 class="banner">NDC Micro Edition</h2>					
+				</section>
+
+				<section>
+					<h3 class="fragment" data-animate="fadeInDown">Fact</h3>
+					<h1 class="fragment text-secondary" data-animate="bounceIn">Writing large JavaScript applications is hard</h1>
+				</section>
+
+				<section>
+					<h1>The Mystical TypeScript</h1>
+					<h3 class="fragment text-secondary" data-animate="tada">Demystified</h3>
+				</section>
+
+
+				<section>
+					<section>
+						<h2>Myth #1</h2>
+						<blockquote>
+							&ldquo;TypeScript is not interoperable with JavaScript&rdquo;
+						</blockquote>
+						<p class="fragment">AKA</p>
+						<blockquote class="fragment">
+							&ldquo;I have to rewrite my JavaScript codebase&rdquo;
+						</blockquote>
+					</section>
+					<section>
+						<h2>What language is this?</h2>
+						<pre><code class="javascript" data-trim>
+var Point = function (x, y) { 
+	this.x = x; 
+	this.y = y; 
+};
+Point.prototype.distance = function (other) {
+	other = other || new Point(0.0, 0.0);
+	return Math.sqrt(
+		Math.pow(this.x - other.x, 2) + 
+		Math.pow(this.y - other.y, 2));
+};
+
+var p1 = new Point(5, 6);
+var p2 = new Point(1, 1);
+
+// Calculate distance between two points
+console.log("Distance between", p1, p2, "is", p1.distance(p2));
+						</code></pre>
+						<p class="fragment" data-animate="tada">It's JavaScript!</p>
+						<p class="fragment" data-animate="fadeInUp">And it's TypeScript!</p>
+					</section>
+					<section>
+						<h1 class="animated flash infinite text-highlight slower">All valid JavaScript is valid TypeScript</h1>
+					</section>
+					<section>
+						<h2>Facts</h2>
+						<ul>
+							<li class="fragment">TypeScript <em>compiles</em> into plain old JavaScript</li>
+							<li class="fragment">Static typing is <strong>totally</strong> optional, but encouraged</li>
+							<li class="fragment">There is <strong>no overhead</strong> because TypeScript does not run in the browser</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>Declaration Files</h2>
+
+						<p>Declaration files make it easy to work with existing libraries</p>
+						<p><a href="https://github.com/borisyankov/DefinitelyTyped">github.com/borisyankov/DefinitelyTyped</a></p>
+					</section>
+
+					<section>
+						<h2>Myth #1</h2>
+						<blockquote>
+							&ldquo;TypeScript is not interoperable with JavaScript&rdquo;
+						</blockquote>
+						<p>&nbsp;</p>
+						<p class="fragment">TypeScript is a <em>typed superset</em> of JavaScript that compiles down to plain, human-readable JavaScript</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Myth #2</h2>
+						<blockquote>
+							&ldquo;I have to learn a whole new language&rdquo;
+						</blockquote>
+						<p class="fragment">AKA</p>
+						<blockquote class="fragment">
+							&ldquo;I have to re-learn JavaScript, my existing skills are useless&rdquo;
+						</blockquote>
+					</section>
+
+					<section>
+						<h2>Yes and No</h2>
+
+						<p class="fragment">Are there new language features to learn? <strong>Yes</strong></p>
+						<p class="fragment">Is it a whole new language? <strong>No</strong></p>
+					</section>
+
+					<section>
+						<h2>Perspective</h2>
+
+						<ul>
+							<li class="fragment">TypeScript brings future EcmaScript to you now</li>
+							<li class="fragment">You will probably learn the new syntax <em>anyway</em></li>
+							<li class="fragment">There are only <s>a few</s> a handful of new things to learn</li>
+							<li class="fragment">TypeScript can target different versions of EcmaScript</li>
+							<li class="fragment">TypeScript is forward-compatible</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>TypeScript layers on:</h3>
+
+						<p class="fragment" data-animate="fadeInUp">Interfaces, enums, namespaces, optional parameters, overload functions, abstract classes, class member accessibility/visibility, static typing, generics, union types, type guards, intersection types, type aliasing, and a ton more</p>
+					</section>
+
+					<section>
+						<h2>Learn more:</h2>
+
+						<p><a href="http://www.typescriptlang.org/docs/handbook/basic-types.html">TypeScript Handbook</a></p>
+						<p><a href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript">TypeScript Release Notes</a></p>
+					</section>
+
+					<section>
+						<h2>Myth #2</h2>
+						<blockquote>
+							&ldquo;I have to learn a whole new language&rdquo;
+						</blockquote>
+						<p>&nbsp;</p>
+						<p class="fragment">Existing experience transfers directly. 
+							Much of the syntax and features are designed to be forward-compatible with EcmaScript while maintaining maximum backwards-compatibility.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Myth #3</h2>
+						<blockquote>
+							&ldquo;You can only use TypeScript in Windows&rdquo;
+						</blockquote>
+						<p class="fragment">AKA</p>
+						<blockquote class="fragment">
+							&ldquo;My platform isn't supported!&rdquo;
+						</blockquote>
+					</section>
+
+					<section>
+						<h2>Facts</h2>
+
+						<ul>
+							<li class="fragment">The TypeScript compiler and language service is open-source</li>
+							<li class="fragment">You can use TypeScript on any platform and any OS</li>
+							<li class="fragment">You can integrate TypeScript into any editor of your choice</li>
+						</ul>
+					</section>
+                    
+                    <section>
+						<h2>Cross-Platform</h2>
+
+						<p><a href="https://code.visualstudio.com/docs">Visual Studio Code</a></p>
+						<p>Cross-platform on Linux, Mac, and Windows. Full TypeScript (w/Chrome &amp; Node.js debugging) support plus tons more.</p>
+                        <p><a href="https://code.visualstudio.com/updates">Monthly release cycle</a></p>
+					</section>
+
+					<section>
+						<h2>And there's more...</h2>
+
+						<img src="img/platforms.png">
+						<p><a href="http://www.typescriptlang.org/#download-links">Download for your platform and editor of choice</a></p>
+					</section>
+
+					<section>
+						<h2>Myth #3</h2>
+						<blockquote>
+							&ldquo;You can only use TypeScript in Windows&rdquo;
+						</blockquote>
+						<p>&nbsp;</p>
+						<p class="fragment">TypeScript is open-source, has awesome cross-platform tooling, 
+                            and can integrate with just about any editor you use</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Myth #4</h2>
+						<blockquote>
+							&ldquo;Unit testing will eliminate any need of TypeScript&rdquo;
+						</blockquote>
+						<p class="fragment">AKA</p>
+						<blockquote class="fragment">
+							&ldquo;I don't need no stinkin' type checking&rdquo;
+						</blockquote>
+					</section>
+
+					<section>	
+						<h2>Consider the following</h2>
+						<blockquote class="fragment" data-animate="fadeInUp">
+							&ldquo;Alright, just saved my script, let's run it!&rdquo;
+						</blockquote>
+						<blockquote class="fragment" data-animate="shake">
+							<code style="color: red">TypeError: undefined is not a function</code>
+						</blockquote>
+						<blockquote class="fragment" data-animate="bounceIn" style="font-size: 3em">
+							<code>(╯°□°)╯︵ ┻━┻</code>
+						</blockquote>						
+						<p>&nbsp;</p>
+						<h2 class="fragment">Sound Familiar?</h2>
+					</section>
+
+					<section>	
+						<h2>How about this?</h2>
+
+						<blockquote class="fragment" data-animate="fadeInUp">
+							&ldquo;We should refactor one of the parts of this app!&rdquo;
+						</blockquote>
+						
+						<img class="fragment" src="img/nope.gif">
+					</section>
+
+					<section data-background-image="img/thisisfine.jpg">
+						
+					</section>
+
+					<section>
+						<h1>A Read-Only Codebase Is Not Good</h1>
+					</section>
+
+					<section>
+						<h2>Even if you have tests</h2>
+
+						<p>TypeScript...</p>
+                        <ul>
+                            <li class="fragment">eliminates an entire class of errors</li>
+                            <li class="fragment">allows richer developer tooling (<strong>Intellisense!</strong>)</li>
+                            <li class="fragment">makes your codebase leaner and easier to refactor</li>
+                            <li class="fragment">is opt-in&mdash;use as much or as little as you want</li>
+                            <li class="fragment">is pretty easy to learn</li>
+                        </ul>
+						<br/><br/>
+						<h4 class="fragment">If you are used to strongly-typed languages, <br/>you'll feel right at home</h4>
+					</section>
+
+					<section>
+						<h1>A practical example</h1>
+					</section>
+
+					<section>
+						<h2>Myth #4</h2>
+						<blockquote>
+							&ldquo;Unit testing will eliminate any need of TypeScript&rdquo;
+						</blockquote>
+						<p>&nbsp;</p>
+						<p class="fragment">
+							TypeScript is refactor-friendly, can catch easily overlooked errors, reduces risk of runtime errors,
+							and allows you to reason about your codebase better
+						</p>
+						<p class="fragment text-secondary">You should still totally write tests, though</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Myth #5</h2>
+						<blockquote>
+							&ldquo;TypeScript is like CoffeeScript or Dart or Babel or Flow, etc.&rdquo;
+						</blockquote>
+						<p class="fragment">AKA</p>
+						<blockquote class="fragment">
+							&ldquo;Don't we already have this?&rdquo;
+						</blockquote>
+					</section>
+
+					<section>
+						<h1>MAYBE?<span class="fragment" data-animate="pulse">*</span></h1>
+					</section>
+
+					<section>
+						<h2>CoffeeScript</h2>
+
+						<pre class="fragment" data-animate="fadeInUp"><code data-trim class="coffeescript">
+class Point
+  constructor(@x, @y) ->
+
+  distance(other) ->
+    dx = @x - other.x
+    dy = @y - other.y
+    Math.sqrt dx * dx + dy * dy
+						</code></pre>
+
+						<ul>
+							<li class="fragment">Is a separate language that compiles into JavaScript</li>
+							<li class="fragment">Inspired by Ruby &amp; Python (ft. significant whitespace)</li>
+							<li class="fragment">Does not feature static typing</li>
+							<li class="fragment">Is more of a "macro" or expansion w/syntactic-sugar language</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Dart</h2>
+
+						<pre class="fragment" data-animate="fadeInUp"><code data-trim class="dart">
+import 'dart:math';
+
+class Point {
+  num x;
+  num y;
+
+  Point(this.x, this.y);
+
+  num distance(Point p) {
+    num dx = x - p.x;
+    num dy = y - p.y;
+    return sqrt(dx * dx + dy * dy);
+  }
+}
+						</code></pre>
+
+						<ul>
+							<li class="fragment">Full on SDK/framework and language</li>
+							<li class="fragment">Supports static types</li>
+							<li class="fragment">Compiles into non-idiomatic JavaScript</li>
+                            <li class="fragment">Can run in a Dartium VM (extra perf)</li>							
+						</ul>
+					</section>
+
+					<section>
+						<h2>Babel.js</h2>
+
+						<ul>
+							<li class="fragment">Is not a language or framework, it's a compiler</li>
+							<li class="fragment">Transpiles future EcmaScript for backwards-compatibility</li>
+							<li class="fragment">Supports extensible polyfill system</li>	
+							<li class="fragment">Is not necessarily mutually exclusive from TS</li>						
+						</ul>
+
+						<p class="fragment text-secondary">You should definitely consider using it if you aren't going to use TypeScript</p>
+					</section>
+
+					<section>
+						<h2>Flow</h2>
+
+						<pre class="fragment" data-animate="fadeInUp"><code data-trim class="javascript">
+/* @flow */
+
+class Point {
+	x: number;
+	y: number;
+
+	constructor(x: number, y: number) {
+		this.x = x;
+		this.y = y;
+	}
+
+	distance(p: Point) {
+		var dx = this.x - p.x;
+		var dy = this.y - p.y;
+
+		return Math.sqrt(dx * dx + dy * dy);
+	}
+}
+						</code></pre>	
+
+						<ul>
+							<li class="fragment">Is <em>eerily</em> similar to TypeScript (checker vs. compiler)</li>
+							<li class="fragment">Is pretty much the same (besides some syntax)</li>
+							<li class="fragment">Is opt-in vs. opt-out</li>
+							<li class="fragment">Uses separate packages to compile vs. being integrated</li>						
+						</ul>
+
+						<p class="fragment text-secondary">They're pretty similar, <a href="https://github.com/niieani/typescript-vs-flowtype">compare</a>.</p>
+					</section>
+
+					<section>
+						<h2>TypeScript</h2>
+
+						<pre class="fragment" data-animate="fadeInUp"><code data-trim class="typescript">
+class Point {
+  constructor(public x: number, public y: number) {
+
+  }
+
+  distance(p: Point) {
+    var dx = this.x - p.x;
+    var dy = this.y - p.y;
+
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+}
+						</code></pre>	
+
+						<ul>
+							<li class="fragment">Good middle-ground, outputs idiomatic JavaScript</li>
+							<li class="fragment">Adds static typing, friendly to Java/C-based language devs</li>
+							<li class="fragment">Forwards-compatible syntax with future EcmaScript, etc.</li>
+                            <li class="fragment">Rich editor tooling &amp; intellisense</li>
+							<li class="fragment">Simpler, "It's just JavaScript!&trade;"</li>
+						</ul>					
+					</section>
+
+					<section>
+						<h2>Myth #5</h2>
+						<blockquote>
+							&ldquo;TypeScript is like CoffeeScript or Dart or Babel.js or Flow&rdquo;
+						</blockquote>
+						<p>&nbsp;</p>
+						<p class="fragment">There are <strong>huge</strong> fundamental differences between these languages/frameworks/tools (but Flow is really damn close)</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Practical Use Cases</h1>
+					</section>
+
+					<section data-background-video="img/hexshaper.mp4" data-background-color="#000">
+						<h2 class="text-secondary">Games</h2>
+
+						<p>I've used TypeScript for over 4 years now in my own game(s) and apps</p>
+						<p>Assists in maintaining good structure and organization of our code</p>
+						<p><a href="https://github.com/excaliburjs/ludum-38">github.com/excaliburjs/ludum-38</a></p>
+						<p><a href="https://github.com/excaliburjs/ludum-35">github.com/excaliburjs/ludum-35</a></p>
+						<p><a href="https://github.com/excaliburjs/ludum-33">github.com/excaliburjs/ludum-33</a></p>
+                        <p><a href="https://github.com/excaliburjs/ludum-31">github.com/excaliburjs/ludum-31</a></p>
+                        <p><a href="https://github.com/excaliburjs/Ludum-29">github.com/excaliburjs/ludum-29</a></p>
+					</section>	
+
+					<section data-background="img/excalibur.jpg">
+						<h2 class="text-secondary">Libraries</h2>
+
+						<p><a href="https://github.com/excaliburjs/Excalibur">Excalibur.js</a> (the engine I work on) is written in TypeScript</p>
+                        <p><a href="https://github.com/angular/angular">Angular</a> is written in TypeScript</p>
+						<p>Provides type-safe API and <a href="http://excaliburjs.com/docs/api/edge/">type-rich</a> documentation</p>
+						<p>Provides structure and organization to your framework</p>
+						<p>Great for OSS projects where others can contribute</p>
+						<p><a href="https://github.com/excaliburjs/Excalibur">github.com/excaliburjs/Excalibur</a></p>
+					</section>
+
+					<section data-background="img/monaco.jpg">
+						<h2 class="text-secondary">Large Applications</h2>
+
+						<p><a href="https://github.com/Microsoft/vscode">Visual Studio Code</a> is written in TypeScript</p>
+                        <p>The Microsoft <a href="http://portal.azure.com">Azure Blade UI (portal)</a> is written in TypeScript</p>
+                        <p><a href="https://angular.io/docs/ts/latest/quickstart.html">Angular</a> (and React) apps are using TypeScript</p>
+						<p>Great fit for "enterprisey" apps and projects with rotating team members</p>                    						
+					</section>
+				</section>
+                
+                <section>
+                    <h2>Do you truly enjoy the loosey-goosey nature of Javascript <u>all the time</u>?</h2>
+                    <p class="fragment">It wasn't designed for scale. TypeScript is.</p>
+                    <p class="fragment">Go and get things done.</p>
+				</section>
+								
+				<section>
+					<h1>Thank you</h1>
+					<p>@kamranayub / <a href="http://kamranicus.com">kamranicus.com</a></p>
+					<p>&nbsp;</p>
+
+					<h4>See me at</h4>
+
+					<p><a href="http://minnewebcon.org/sessions/welcome-bot-overlords-build-an-interactive-bot-using-javascript-node-and-the-cloud">Azure and Node.js Bot Workshop</a>
+						<br />MinneWebCon, Tuesday, April 24</p>
+
+					<p><a href="https://ndcminnesota.com/talk/building-scalable-maintainable-apps-using-typescript-and-react/">Maintainable &amp; Scalable Apps Using TypeScript and React</a>
+					<br />NDC MN, Thursday, May 10</p>
+
+					<p>&nbsp;</p>
+
+					<h4>For your perusal</h4>
+
+					<p class="h5">Learn TypeScript <a href="http://bit.ly/introts">with my 8 hour course</a> (bit.ly/introts) from Packt</p>
+					
+					<p class="credits"><strong>Credits: <a href='http://www.freepik.com/free-vector/decorative-dividers-collection_790000.htm'>Title border designed by Freepik</a></p>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+			// Animate.css integration
+			// I LIKE ANIMATIONS
+			Reveal.addEventListener('fragmentshown', function( event ) {
+				var f = event.fragment; // the fragment DOM element
+
+				// base animate.css class
+				f.classList.add('animated');
+
+				// pull animation class
+				var ac = f.getAttribute('data-animate');
+				f.classList.add(ac);
+			});
+
+			Reveal.addEventListener('fragmenthidden', function( event ) {
+				var f = event.fragment; // the fragment DOM element
+
+				// base animate.css class
+				f.classList.remove('animated');
+
+				// pull animation class
+				var ac = f.getAttribute('data-animate');
+				f.classList.remove(ac);
+			});
+
+		</script>
+
+	</body>
+</html>

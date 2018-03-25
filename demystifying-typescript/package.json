@@ -1,0 +1,15 @@
+{
+  "name": "demystifying-typescript",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demystifying Typescript presentation",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve example"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "6.5.3"
+  }
+}
